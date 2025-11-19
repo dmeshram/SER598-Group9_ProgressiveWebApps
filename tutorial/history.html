@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>History — Green Loop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        :root {
+            --green-900: #1b4d3e;
+            --green-700: #2f6f4f;
+            --green-500: #3c8c5a;
+            --green-300: #a8d5b8;
+            --green-100: #e8f6ef;
+            --bg-light: #f7faf7;
+            --text-dark: #1d2b1f;
+            --text-muted: #5d6d5f;
+            --radius: 14px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", "Segoe UI", sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background: white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--green-700);
+        }
+
+        .logo-circle {
+            width: 32px;
+            height: 32px;
+            background: var(--green-500);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            margin: 0 20px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-700);
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: var(--green-700);
+            color: white;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--green-900);
+        }
+
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--green-100), #ffffff);
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--green-900);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-muted);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        h2 {
+            margin-top: 28px;
+            font-size: 26px;
+            color: var(--green-900);
+        }
+
+        p {
+            font-size: 17px;
+            color: var(--text-muted);
+        }
+
+        ul {
+            color: var(--text-muted);
+            margin-left: 30px;
+        }
+
+        .callout {
+            background: var(--green-100);
+            padding: 18px;
+            border-radius: var(--radius);
+            border-left: 6px solid var(--green-500);
+            margin-top: 16px;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 30px;
+            background: white;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid #e6e6e6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <div class="logo-circle"></div>
+            Green Loop
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="setup.html">Setup</a>
+            <a href="implementation.html">Implementation</a>
+            <a href="offline.html">Offline</a>
+            <a href="analysis.html">Analysis</a>
+            <a href="references.html">References</a>
+            <a href="resources.html">Resources</a>
+        </div>
+
+        <a class="nav-btn" href="setup.html">Get Started</a>
+    </div>
+
+    <section class="hero">
+        <h1>History of Progressive Web Apps</h1>
+        <p>A brief history of PWAs, the web standards that enabled them, and the milestones that made them mainstream.
+        </p>
+    </section>
+
+    <div class="container">
+        <h2>Introduction</h2>
+        <p>
+            Progressive Web Apps (PWAs) are a set of web-platform features combined to deliver app-like experiences on
+            the web. The PWA concept grew from years of incremental improvements in browser capabilities, networking,
+            and developer tooling.
+        </p>
+
+        <h2>Timeline & Key Milestones</h2>
+        <div class="callout">
+            <ul>
+                <li><strong>2007–2010:</strong> Mobile web and app stores begin — developers seek better mobile UX.</li>
+                <li><strong>2012:</strong> Service workers concept begins to appear in specs and experiments.</li>
+                <li><strong>2014:</strong> App-like web experiences multiply; early offline patterns emerge.</li>
+                <li><strong>2015:</strong> Service Workers shipped in Chrome; offline and push become viable.</li>
+                <li><strong>2015–2016:</strong> Web App Manifest and installability get standardized.</li>
+                <li><strong>2017:</strong> PWAs promoted widely at conferences; major sites adopt installable
+                    experiences.</li>
+                <li><strong>2018–2020:</strong> Broader browser support and improved power/feature parity.</li>
+            </ul>
+        </div>
+
+        <h2>Why PWAs Matter</h2>
+        <p>
+            PWAs lowered the friction for delivering engaging, offline-capable applications without the overhead of
+            native app stores. They brought features like background sync, push notifications, and installability to the
+            web platform, enabling better user retention and more resilient web apps.
+        </p>
+
+        <h2>Browser Support & Adoption</h2>
+        <p>
+            Browser support has historically been staggered: Chrome and Chromium-based browsers led with service workers
+            and manifests, while other vendors added support later. Today most modern browsers support the core PWA
+            features, but subtle differences in APIs and platform integration remain.
+        </p>
+
+        <h2>Further Reading</h2>
+        <div class="callout">
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps">MDN: Progressive Web
+                        Apps</a></li>
+                <li><a href="https://web.dev/progressive-web-apps/">web.dev: Progressive Web Apps</a></li>
+                <li><a href="references.html">References in this tutorial</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        Green Loop &copy; 2024. Group 9 - SER598 Advanced Web Applications.
+    </footer>
+
+</body>
+
+</html>
