@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Outcomes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        :root {
+          --green-900: #1b4d3e;
+          --green-700: #2f6f4f;
+          --green-500: #3c8c5a;
+          --green-300: #a8d5b8;
+          --green-100: #e8f6ef;
+          --bg-light: #f7faf7;
+          --text-dark: #1d2b1f;
+          --text-muted: #5d6d5f;
+          --radius: 14px;
+        }
+
+        body {
+          margin: 0;
+          font-family: "Inter", "Segoe UI", sans-serif;
+          background: var(--bg-light);
+          color: var(--text-dark);
+          line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 18px 40px;
+          background: white;
+          box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          border-radius: 0 0 20px 20px;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--green-700);
+        }
+
+        .logo-circle {
+          width: 32px;
+          height: 32px;
+          background: var(--green-500);
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .nav-links a {
+          color: var(--text-muted);
+          margin: 0 20px;
+          font-size: 16px;
+          text-decoration: none;
+          transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+          color: var(--green-700);
+        }
+
+        .nav-btn {
+          padding: 10px 20px;
+          background: var(--green-700);
+          color: white;
+          border-radius: var(--radius);
+          text-decoration: none;
+          font-weight: 600;
+          transition: 0.2s ease;
+        }
+
+        .nav-btn:hover {
+          background: var(--green-900);
+        }
+
+        .hero {
+          padding: 80px 40px;
+          text-align: center;
+          background: linear-gradient(to bottom, var(--green-100), #ffffff);
+          border-bottom: 1px solid #e6e6e6;
+        }
+
+        .hero h1 {
+          font-size: 48px;
+          font-weight: 800;
+          color: var(--green-900);
+          margin-bottom: 20px;
+        }
+
+        .hero p {
+          font-size: 20px;
+          max-width: 750px;
+          margin: 0 auto;
+          color: var(--text-muted);
+        }
+
+        .container {
+          max-width: 900px;
+          margin: 50px auto;
+          padding: 0 25px;
+        }
+
+        h2 {
+          margin-top: 40px;
+          font-size: 28px;
+          color: var(--green-900);
+        }
+
+        p {
+          font-size: 17px;
+          color: var(--text-muted);
+        }
+
+        ul {
+          color: var(--text-muted);
+          margin-left: 30px;
+        }
+
+        .toc {
+          background: var(--green-100);
+          padding: 25px;
+          border-radius: var(--radius);
+          border-left: 6px solid var(--green-500);
+          margin-top: 20px;
+        }
+
+        .toc a {
+          text-decoration: none;
+          font-weight: 600;
+          color: var(--green-700);
+          transition: 0.2s;
+        }
+
+        .toc a:hover {
+          color: var(--green-900);
+        }
+
+        footer {
+          margin-top: 80px;
+          padding: 30px;
+          background: white;
+          text-align: center;
+          font-size: 14px;
+          color: var(--text-muted);
+          border-top: 1px solid #e6e6e6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="navbar">
+    <div class="logo">
+        <div class="logo-circle"></div>
+        Green Loop
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="setup.html">Setup</a>
+        <a href="implementation.html">Implementation</a>
+        <a href="offline.html">Offline</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="references.html">References</a>
+        <a href="resources.html">Resources</a>
+    </div>
+
+    <a class="nav-btn" href="setup.html">Get Started</a>
+</div>
+
+<section class="hero">
+    <h1>Why are you here!</h1>
+    <p>
+        To be a smart coder and learn about progressive web apps.
+    </p>
+</section>
+
+<div class="container">
+
+    <h2>Welcome to the Green Loop Tutorial</h2>
+    <p>
+        This tutorial will guide you through building <strong>Green Loop</strong>,
+        an offline-first sustainability logger.
+        You will learn modern PWA techniques including caching strategies, service workers,
+        local storage with IndexedDB, and full-stack development using React and Express.
+    </p>
+
+    <h2>Learning Outcomes</h2>
+    <p>By the end of this tutorial, you will be able to:</p>
+
+    <ul>
+        <li>Explain PWA fundamentals and web standards.</li>
+        <li>Build an installable PWA with service workers and manifest.</li>
+        <li>Implement offline data storage using IndexedDB.</li>
+        <li>Create a Dockerized full-stack app (React + Express).</li>
+        <li>Deploy using CI/CD pipelines on GitHub Actions.</li>
+        <li>Analyze the strengths and challenges of PWA technology.</li>
+    </ul>
+
+<!--    <h2>Table of Contents</h2>-->
+
+<!--    <div class="toc">-->
+<!--        <ul>-->
+<!--            <li><a href="history.html">1. History of PWAs & Web Standards</a></li>-->
+<!--            <li><a href="setup.html">2. Environment Setup & Project Structure</a></li>-->
+<!--            <li><a href="implementation.html">3. Building Green Loop – Frontend & Backend</a></li>-->
+<!--            <li><a href="offline.html">4. Offline Mode – Service Worker & IndexedDB</a></li>-->
+<!--            <li><a href="analysis.html">5. Analytical Component – Pros, Cons & Future</a></li>-->
+<!--            <li><a href="references.html">6. References</a></li>-->
+<!--            <li><a href="resources.html">7. Additional Learning Resources</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+</div>
+
+<footer>
+    Green Loop &copy; 2024. Group 9 - SER598 Advanced Web Applications.
+</footer>
+</body>
+</html>
