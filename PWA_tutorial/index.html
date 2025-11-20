@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PWA Tutorial — Home</title>
+
+  <style>
+    :root{
+      --maroon:#8C1D40;
+      --dark-maroon:#6b1330;
+      --gold:#FFC627;
+      --bg:#fff9f2;
+      --muted:#6b7280;
+      --card:#ffffff;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:linear-gradient(180deg,#fffefc,var(--bg));
+      color:#111;
+      line-height:1.5;
+      font-size:16px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,var(--maroon),var(--dark-maroon));
+      color:white;
+      padding:20px 20px;
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      border-top: 5px solid var(--gold);
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:120px;height:70px;border-radius:8px;object-fit:cover; margin-bottom: 8px;}
+    header h1{font-size:20px;margin:0}
+    header .tag{font-size:13px;opacity:0.9}
+
+    /* Layout */
+    .container{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:18px;
+      max-width:1100px;
+      margin:24px auto;
+      padding:0 16px;
+    }
+    nav{
+      background:var(--card);
+      border-radius:10px;
+      padding:12px;
+      box-shadow:0 6px 18px rgba(11,17,22,0.06);
+      height:fit-content;
+    }
+    nav h2{font-size:15px;color:var(--maroon);margin-bottom:10px}
+    nav ul{list-style:none}
+    nav a{
+      display:block;
+      padding:8px 10px;
+      color:var(--maroon);
+      text-decoration:none;
+      border-radius:6px;
+      margin-bottom:6px;
+      font-weight:500;
+    }
+    nav a:hover{background:#fff2d6}
+
+    main section{
+      background:var(--card);
+      border-radius:10px;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:0 6px 18px rgba(11,17,22,0.04);
+    }
+    h2{color:var(--maroon);margin-bottom:8px}
+    .muted{color:var(--muted);font-size:14px}
+
+    .btn{
+      display:inline-block;
+      background:var(--maroon);
+      color:white;
+      padding:8px 12px;
+      border-radius:8px;
+      text-decoration:none;
+      margin-top:8px;
+    }
+    .btn:hover{background:var(--dark-maroon)}
+
+    @media(max-width:900px){
+      .container{grid-template-columns:1fr}
+      nav{order:2}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <img src="./assets/White_logo.jpg" class="logo" alt="ASU Logo">
+      <div>
+        <h1>Progressive Web Apps Tutorial</h1>
+        <div class="tag">Group 09 | Advanced Project | SER598 - Web Based Applications</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="container">
+    <!-- Sidebar -->
+    <nav>
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="implementation.html">Implementation</a></li>
+        <li><a href="analysis.html">Analytical Overview</a></li>
+        <li><a href="activities.html">Student Activities</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Welcome</h2>
+        <p class="muted">
+          This tutorial helps you understand Progressive Web Apps — what they are, how they evolved, and their advantages.
+          Navigate through the sidebar to explore different sections.
+        </p>
+      </section>
+
+      <section>
+        <h2>What You’ll Learn</h2>
+        <ul>
+          <li>What Progressive Web Apps (PWAs) are</li>
+          <li>Their history and key concepts</li>
+          <li>Implementation overview</li>
+          <li>Benefits, challenges, and analysis</li>
+          <li>Student activities for hands-on practice</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Get Started</h2>
+        <p>Click below to begin exploring the tutorial.</p>
+        <a href="intro.html" class="btn">Go to Introduction →</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
