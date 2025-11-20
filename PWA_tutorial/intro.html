@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PWA Tutorial — Introduction</title>
+
+  <!-- 🌈 Inline CSS: ASU Maroon + Gold theme -->
+  <style>
+    :root{
+      --maroon:#8C1D40;
+      --dark-maroon:#6b1330;
+      --gold:#FFC627;
+      --bg:#fff9f2;
+      --muted:#6b7280;
+      --card:#ffffff;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:linear-gradient(180deg,#fffefc,var(--bg));
+      color:#111;
+      line-height:1.5;
+      font-size:16px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* Updated centered header with big logo */
+    header{
+      background:linear-gradient(90deg,var(--maroon),var(--dark-maroon));
+      color:white;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      border-top:5px solid var(--gold);
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+    .logo{
+      width:120px;
+      height:auto;
+      margin-bottom:8px;
+    }
+    header h1{font-size:28px;margin:4px 0}
+    header .tag{font-size:14px;opacity:0.9}
+
+    /* Layout */
+    .container{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:18px;
+      max-width:1100px;
+      margin:24px auto;
+      padding:0 16px;
+    }
+    nav{
+      background:var(--card);
+      border-radius:10px;
+      padding:12px;
+      box-shadow:0 6px 18px rgba(11,17,22,0.06);
+      height:fit-content;
+    }
+    nav h2{font-size:15px;color:var(--maroon);margin-bottom:10px}
+    nav ul{list-style:none}
+    nav a{
+      display:block;
+      padding:8px 10px;
+      color:var(--maroon);
+      text-decoration:none;
+      border-radius:6px;
+      margin-bottom:6px;
+      font-weight:500;
+    }
+    nav a:hover{background:#fff2d6}
+
+    main section{
+      background:var(--card);
+      border-radius:10px;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:0 6px 18px rgba(11,17,22,0.04);
+    }
+    h2{color:var(--maroon);margin-bottom:8px}
+    .muted{color:var(--muted);font-size:14px}
+
+    .btn{
+      display:inline-block;
+      background:var(--maroon);
+      color:white;
+      padding:8px 12px;
+      border-radius:8px;
+      text-decoration:none;
+      margin-top:8px;
+    }
+    .btn:hover{background:var(--dark-maroon)}
+
+    @media(max-width:900px){
+      .container{grid-template-columns:1fr}
+      nav{order:2}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="./assets/White_logo.jpg" class="logo" alt="ASU Logo">
+    <h1>Progressive Web Apps Tutorial</h1>
+    <div class="tag">Introduction</div>
+  </header>
+
+  <!-- Layout -->
+  <div class="container">
+    <!-- Sidebar -->
+    <nav>
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="intro.html">Introduction</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="implementation.html">Implementation</a></li>
+        <li><a href="analysis.html">Analytical Overview</a></li>
+        <li><a href="activities.html">Student Activities</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <section>
+        <h2>What Are Progressive Web Apps (PWAs)?</h2>
+        <p class="muted">
+          A progressive web app (PWA) is an app that's built using web platform technologies, but that provides a user experience like that of a platform-specific app.
+
+Like a website, a PWA can run on multiple platforms and devices from a single codebase. Like a platform-specific app, it can be installed on the device, can operate while offline and in the background, and can integrate with the device and with other installed apps.
+        </p>
+      </section>
+
+      <section>
+        <h2>Key Characteristics of PWAs</h2>
+        <ul>
+          <li><strong>Responsive:</strong> Works on any screen size — phone, tablet, or desktop.</li>
+          <li><strong>Offline Capable:</strong> Uses caching to serve content without an internet connection.</li>
+          <li><strong>App-like Feel:</strong> Launches full-screen and behaves like a native app.</li>
+          <li><strong>Secure:</strong> Runs under HTTPS to ensure data integrity.</li>
+          <li><strong>Installable:</strong> Can be added to your home screen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why Learn PWAs?</h2>
+        <p>
+          PWAs have revolutionized how developers build cross-platform apps.
+          Learning about them helps you understand service workers, caching, and offline-first design — key skills in modern web development.
+        </p>
+      </section>
+
+      <section>
+        <h2>Continue Learning</h2>
+        <p>Next, explore how PWAs evolved and why they became popular in web development.</p>
+        <a href="history.html" class="btn">Go to History →</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
