@@ -1,0 +1,651 @@
+:root {
+    --maroon: #8C1D40;
+    --dark-maroon: #6b1330;
+    --gold: #FFC627;
+    --bg: #fff9f2;
+    --muted: #6b7280;
+    --card: #ffffff;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background: linear-gradient(180deg, #fffefc, var(--bg));
+    color: #111;
+    line-height: 1.5;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* -----------------------
+   Header — Professional Layout
+------------------------ */
+
+.site-header {
+    background: linear-gradient(90deg, var(--maroon), var(--dark-maroon));
+    color: white;
+    padding: 24px 0;
+    border-top: 6px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-logo {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title {
+    font-size: 32px;
+    /* Bigger title */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+/* Responsive header improvements */
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-logo {
+        margin-bottom: 10px;
+    }
+
+    .header-title {
+        font-size: 26px;
+    }
+}
+
+
+/* Layout */
+.container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 18px;
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* Sidebar */
+nav {
+    background: linear-gradient(180deg, #fff, #fffaf7);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 10px 30px rgba(11, 17, 22, 0.06);
+    height: fit-content;
+    border: 1px solid rgba(139, 29, 64, 0.06);
+}
+
+nav h2 {
+    font-size: 15px;
+    color: var(--maroon);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav h2::before {
+    content: "📚";
+}
+
+.toc-list {
+    list-style: none;
+    margin-top: 6px;
+    padding-left: 0;
+}
+
+.toc-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background 160ms, transform 120ms;
+}
+
+.toc-item:hover,
+.toc-item:focus-within {
+    background: #fff6ea;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(140, 29, 64, 0.04);
+}
+
+.toc-left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.toc-emoji {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #fff, #fff6f2);
+    border: 1px solid rgba(139, 29, 64, 0.06);
+    box-shadow: 0 2px 6px rgba(11, 17, 22, 0.03);
+}
+
+.toc-link {
+    color: var(--maroon);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.toc-meta {
+    font-size: 12px;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+.badge {
+    font-size: 12px;
+    color: #43220b;
+    background: linear-gradient(180deg, #fff2d6, #fff0cc);
+    border-radius: 999px;
+    padding: 6px 8px;
+    border: 1px solid rgba(139, 29, 64, 0.06);
+    font-weight: 700;
+}
+
+.toc-current {
+    background: linear-gradient(90deg, rgba(140, 29, 64, 0.06), rgba(140, 29, 64, 0.02));
+    border-left: 3px solid var(--maroon);
+    padding-left: 8px;
+}
+
+.toc-footer {
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(139, 29, 64, 0.06);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Main content */
+main section {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 18px rgba(11, 17, 22, 0.04);
+}
+
+h2 {
+    color: var(--maroon);
+    margin-bottom: 8px
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px
+}
+
+.btn {
+    display: inline-block;
+    background: var(--maroon);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.btn:hover {
+    background: var(--dark-maroon)
+}
+
+/* playful extras */
+.lede {
+    font-size: 15px;
+    color: #222;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+.note {
+    background: linear-gradient(180deg, #fffaf0, #fff6e6);
+    border-left: 4px solid var(--gold);
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #5b3a2b;
+    font-weight: 600;
+}
+
+.fun {
+    font-style: italic;
+    color: #3b2a2a;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(11, 17, 22, 0.04);
+}
+
+.chip {
+    display: inline-block;
+    background: #fff6e8;
+    border: 1px solid #ffead0;
+    color: #8a4b2f;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+ul.tips {
+    margin-top: 8px;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.tips li::before {
+    content: "🔹";
+    margin-right: 8px;
+}
+
+footer {
+    max-width: 1100px;
+    margin: 18px auto 60px;
+    padding: 0 16px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+/* Responsive */
+@media(max-width:900px) {
+    .container {
+        grid-template-columns: 1fr
+    }
+
+    nav {
+        order: 2
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------
+  Sidebar toggle (mobile)
+   - keeps desktop unchanged, collapses sidebar on small screens
+-------------------------- */
+
+.nav-toggle {
+    display: none;
+    /* shown only on small screens via media query */
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--maroon);
+    background: #fff;
+    cursor: pointer;
+}
+
+/* On small screens hide sidebar by default; show toggle */
+@media (max-width: 900px) {
+
+    /* make the sidebar collapsible */
+    nav#sidebar {
+        position: relative;
+    }
+
+    /* hide actual nav content by default; user can open it */
+    nav#sidebar:not(.open) .toc-list,
+    nav#sidebar:not(.open) .toc-footer {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: inline-block;
+    }
+
+    /* when opened, ensure nav appears visually above content */
+    nav#sidebar.open {
+        z-index: 80;
+        box-shadow: 0 20px 40px rgba(11, 17, 22, 0.12);
+    }
+
+    /* a subtle animation when opening */
+    nav#sidebar .toc-list {
+        animation: slideDown 220ms ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* -----------------------------
+   INTRO PAGE — SPECIFIC STYLES
+------------------------------ */
+
+    .lede {
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .intro-list {
+        margin-top: 10px;
+        padding-left: 18px;
+        line-height: 1.6;
+    }
+
+    .intro-list li {
+        margin-bottom: 6px;
+    }
+
+    .intro-steps {
+        margin-top: 10px;
+        padding-left: 18px;
+        line-height: 1.6;
+    }
+
+    .intro-steps li {
+        margin-bottom: 6px;
+    }
+
+    .sidebar-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* -----------------------------
+   HISTORY PAGE — SPECIFIC STYLES
+------------------------------ */
+
+    .history-list {
+        margin-top: 10px;
+        padding-left: 18px;
+        line-height: 1.6;
+    }
+
+    .history-list li {
+        margin-bottom: 10px;
+    }
+
+    .lede {
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    /* -----------------------------
+   ANALYTICAL OVERVIEW — PAGE STYLES
+------------------------------ */
+
+    .lede {
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    /* Metrics grid (4 cards) */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .metric {
+        background: #fff;
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 4px 10px rgba(11, 17, 22, 0.04);
+    }
+
+    .metric-value {
+        font-weight: 700;
+        color: var(--maroon);
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .metric-desc {
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    /* Analysis lists and checklist */
+    .analysis-list,
+    .checklist {
+        margin-top: 10px;
+        padding-left: 18px;
+        line-height: 1.6;
+    }
+
+    .analysis-list li,
+    .checklist li {
+        margin-bottom: 8px;
+    }
+
+    /* Metrics table */
+    .metrics-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    .metrics-table th,
+    .metrics-table td {
+        border: 1px solid #f0e9e6;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .metrics-table thead th {
+        background: linear-gradient(180deg, #fffaf7, #fff5ef);
+        color: var(--maroon);
+        font-weight: 700;
+    }
+
+    .note {
+        background: linear-gradient(180deg, #fffaf0, #fff6e6);
+        border-left: 4px solid var(--gold);
+        padding: 10px 12px;
+        border-radius: 8px;
+        color: #5b3a2b;
+        font-weight: 600;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+        .metrics-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .metrics-table th,
+        .metrics-table td {
+            font-size: 13px;
+        }
+    }
+
+    /* Code block / copy button styles (implementation page) */
+    .code-toolbar {
+        position: relative;
+    }
+
+    .copy-btn {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        border: none;
+        background: white;
+        color: var(--maroon);
+        padding: 6px 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(11, 17, 22, 0.05);
+    }
+
+    .copy-btn:active {
+        transform: translateY(1px);
+    }
+
+    pre {
+        background: #0b1220;
+        color: #e6eef6;
+        padding: 12px;
+        border-radius: 6px;
+        overflow: auto;
+        font-family: monospace;
+        font-size: 13px;
+    }
+
+    /* -----------------------------
+   ACTIVITIES PAGE — STYLES
+------------------------------ */
+
+    .lab {
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 14px;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(11, 17, 22, 0.04);
+    }
+
+    .lab-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .lab-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .lab-body {
+        margin-top: 12px;
+        padding-top: 6px;
+        border-top: 1px dashed rgba(139, 29, 64, 0.04);
+    }
+
+    .code-toolbar {
+        position: relative;
+    }
+
+    .copy-btn {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        border: none;
+        background: white;
+        color: var(--maroon);
+        padding: 6px 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(11, 17, 22, 0.05);
+    }
+
+    .copy-btn:active {
+        transform: translateY(1px);
+    }
+
+    pre {
+        background: #0b1220;
+        color: #e6eef6;
+        padding: 12px;
+        border-radius: 6px;
+        overflow: auto;
+        font-family: monospace;
+        font-size: 13px;
+    }
+
+    /* Quiz styles */
+    #quiz-form ol {
+        padding-left: 18px;
+    }
+
+    #quiz-result {
+        font-weight: 600;
+        color: var(--maroon);
+    }
+
+    /* small responsive tweaks */
+    @media (max-width: 900px) {
+        .lab-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .lab-actions {
+            width: 100%;
+            justify-content: flex-start;
+        }
+    }
+
+}

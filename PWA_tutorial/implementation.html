@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PWA Tutorial — Implementation</title>
+
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html">
+                <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+            </a>
+
+            <div class="header-text">
+                <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+                <p class="header-subtitle">Implementation — examples, repo & run instructions</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav aria-label="Table of contents" id="sidebar">
+            <div class="sidebar-top">
+                <h2>Table of Contents</h2>
+                <button id="navToggle" class="nav-toggle" aria-controls="sidebar" aria-expanded="false">Menu</button>
+            </div>
+
+            <ul class="toc-list" id="tocList">
+
+                <li class="toc-item" data-page="intro.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📘</span>
+                        <div>
+                            <a class="toc-link" href="intro.html">Introduction</a>
+                            <span class="toc-meta">Start here — what is a PWA? (≈10 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Begin</span>
+                </li>
+
+                <li class="toc-item" data-page="history.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📜</span>
+                        <div>
+                            <a class="toc-link" href="history.html">History</a>
+                            <span class="toc-meta">Origins & milestones (≈8 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Story</span>
+                </li>
+
+                <!-- MOVED: Analytical Overview BEFORE Implementation -->
+                <li class="toc-item" data-page="analysis.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🔍</span>
+                        <div>
+                            <a class="toc-link" href="analysis.html">Analytical Overview</a>
+                            <span class="toc-meta">Pros, cons & use-cases (≈12 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Think</span>
+                </li>
+
+                <li class="toc-item" data-page="implementation.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🛠️</span>
+                        <div>
+                            <a class="toc-link" href="implementation.html">Implementation</a>
+                            <span class="toc-meta">Manifest, service worker & examples (≈30–45 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Build</span>
+                </li>
+
+                <li class="toc-item" data-page="activities.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🧪</span>
+                        <div>
+                            <a class="toc-link" href="activities.html">Student Activities</a>
+                            <span class="toc-meta">Labs & micro-quizzes (≈20 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Do</span>
+                </li>
+
+                <li class="toc-item" data-page="references.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📚</span>
+                        <div>
+                            <a class="toc-link" href="references.html">References</a>
+                            <span class="toc-meta">Further reading & tools</span>
+                        </div>
+                    </div>
+                    <span class="badge">Read</span>
+                </li>
+
+            </ul>
+
+            <div class="toc-footer">Tip: after cloning the repo run the backend and frontend locally using the commands
+                below.</div>
+        </nav>
+
+        <!-- Main content -->
+        <main>
+
+            <section>
+                <h2>Project repository (GitHub)</h2>
+                <p class="muted">The full project source is available on GitHub. Replace the placeholder URL below with
+                    your repository link.</p>
+
+                <p><strong>Repository (placeholder):</strong></p>
+                <p><a id="repoLink" href="https://github.com/your-repo" target="_blank"
+                        rel="noopener">https://github.com/your-repo</a></p>
+
+                <p class="muted" style="margin-top:8px">If you want, upload your ZIP and I will replace the placeholder
+                    link and paste a short repo README snippet directly into this page.</p>
+            </section>
+
+            <section>
+                <h2>Overview of implementation</h2>
+                <p class="lede">
+                    This project uses a two-tier architecture:
+                </p>
+                <ul>
+                    <li><strong>Backend:</strong> Spring Boot (Maven) — provides REST APIs used by the frontend.</li>
+                    <li><strong>Frontend:</strong> Modern JS app (Node/npm) — serves the UI and PWA assets (manifest,
+                        service worker sample).</li>
+                </ul>
+
+                <p class="muted">Below are the exact commands to run each part locally.</p>
+            </section>
+
+            <section>
+                <h2>Prerequisites</h2>
+                <ul class="analysis-list">
+                    <li>Java 11+ (or the Java version specified in your `pom.xml`). Confirm with
+                        <code>java -version</code>.
+                    </li>
+                    <li>Maven (3.6+) — used to build and run the Spring Boot backend. Confirm with <code>mvn -v</code>.
+                    </li>
+                    <li>Node.js (14+) and npm — used for frontend toolchain. Confirm with <code>node -v</code> and
+                        <code>npm -v</code>.
+                    </li>
+                    <li>Git — to clone the repository.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Run backend (Spring Boot)</h2>
+                <p class="muted">From the repository root, change into the backend module (if applicable) and run:</p>
+
+                <div class="code-toolbar" style="position:relative;margin-top:8px">
+                    <button class="copy-btn" data-target="cmd-backend">Copy</button>
+                    <pre id="cmd-backend"><code>mvn spring-boot:run</code></pre>
+                </div>
+
+                <p class="muted" style="margin-top:8px">
+                    Notes:
+                <ul>
+                    <li>If your backend is in a subfolder (for example `server/` or `backend/`), run the command from
+                        that folder.</li>
+                    <li>To build a production JAR: <code>mvn clean package</code> then run:
+                        <code>java -jar target/your-app.jar</code>.
+                    </li>
+                    <li>Adjust JVM memory or profiles with environment or Maven properties as needed (e.g.
+                        <code>-Dspring.profiles.active=dev</code>).
+                    </li>
+                </ul>
+                </p>
+            </section>
+
+            <section>
+                <h2>Run frontend (Node / npm)</h2>
+                <p class="muted">From the frontend folder (commonly `frontend/` or `client/`), run the usual install &
+                    dev commands:</p>
+
+                <div class="code-toolbar" style="position:relative;margin-top:8px">
+                    <button class="copy-btn" data-target="cmd-frontend-install">Copy</button>
+                    <pre id="cmd-frontend-install"><code>npm install</code></pre>
+                </div>
+
+                <div class="code-toolbar" style="position:relative;margin-top:8px">
+                    <button class="copy-btn" data-target="cmd-frontend-dev">Copy</button>
+                    <pre id="cmd-frontend-dev"><code>npm run dev</code></pre>
+                </div>
+
+                <p class="muted" style="margin-top:8px">
+                    Typical notes:
+                <ul>
+                    <li>If the frontend expects a specific API base URL, set the environment variable or config
+                        (example: <code>VITE_API_BASE_URL</code>, <code>REACT_APP_API_URL</code>, or a `.env` file;
+                        check your frontend README).</li>
+                    <li>Default dev server ports: frontend often runs on <code>http://localhost:3000</code> or
+                        <code>5173</code> (Vite). Backend often uses <code>http://localhost:8080</code>. Adjust proxy or
+                        CORS settings accordingly.
+                    </li>
+                    <li>For production builds, run <code>npm run build</code> and serve the static output (or integrate
+                        with backend). </li>
+                </ul>
+                </p>
+            </section>
+
+            <section>
+                <h2>Recommended repository README snippet</h2>
+                <p class="muted">Add this to the top level `README.md` of your repo so contributors can get started
+                    quickly. Copy with the button.</p>
+
+                <div class="code-toolbar" style="position:relative;margin-top:8px">
+                    <button class="copy-btn" data-target="readme-snippet">Copy</button>
+                    <pre id="readme-snippet"><code># ProjectName
+
+## Quick start
+
+### Prerequisites
+- Java 11+
+- Maven 3.6+
+- Node.js 14+ and npm
+- Git
+
+### Backend (Spring Boot)
+```bash
+cd backend        # or the backend folder in the repo
+mvn spring-boot:run
+# or build a jar:
+mvn clean package
+java -jar target/your-app.jar
+
+                    </section>
+
+                    <section>
+                <h2>Next Steps</h2>
+                <a href="activities.html" class="btn">Go to Activities →</a>
+            </section>

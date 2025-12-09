@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PWA Tutorial — Analytical Overview</title>
+
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html">
+                <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+            </a>
+
+            <div class="header-text">
+                <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+                <p class="header-subtitle">Analytical Overview — when, why, and how to measure</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav aria-label="Table of contents" id="sidebar">
+            <div class="sidebar-top">
+                <h2>Table of Contents</h2>
+                <button id="navToggle" class="nav-toggle" aria-controls="sidebar" aria-expanded="false">Menu</button>
+            </div>
+
+            <ul class="toc-list" id="tocList">
+
+                <li class="toc-item" data-page="intro.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📘</span>
+                        <div>
+                            <a class="toc-link" href="intro.html">Introduction</a>
+                            <span class="toc-meta">Start here — what is a PWA? (≈10 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Begin</span>
+                </li>
+
+                <li class="toc-item" data-page="history.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📜</span>
+                        <div>
+                            <a class="toc-link" href="history.html">History</a>
+                            <span class="toc-meta">Origins & milestones (≈8 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Story</span>
+                </li>
+
+                <!-- MOVED: Analytical Overview BEFORE Implementation -->
+                <li class="toc-item" data-page="analysis.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🔍</span>
+                        <div>
+                            <a class="toc-link" href="analysis.html">Analytical Overview</a>
+                            <span class="toc-meta">Pros, cons & use-cases (≈12 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Think</span>
+                </li>
+
+                <li class="toc-item" data-page="implementation.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🛠️</span>
+                        <div>
+                            <a class="toc-link" href="implementation.html">Implementation</a>
+                            <span class="toc-meta">Manifest, service worker & examples (≈30–45 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Build</span>
+                </li>
+
+                <li class="toc-item" data-page="activities.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🧪</span>
+                        <div>
+                            <a class="toc-link" href="activities.html">Student Activities</a>
+                            <span class="toc-meta">Labs & micro-quizzes (≈20 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Do</span>
+                </li>
+
+                <li class="toc-item" data-page="references.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📚</span>
+                        <div>
+                            <a class="toc-link" href="references.html">References</a>
+                            <span class="toc-meta">Further reading & tools</span>
+                        </div>
+                    </div>
+                    <span class="badge">Read</span>
+                </li>
+
+            </ul>
+
+
+            <div class="toc-footer">
+                Tip: measure before and after — Lighthouse is your friend for PWA audits.
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main>
+            <section>
+                <h2>Analytical Overview — is a PWA the right choice?</h2>
+                <p class="lede">
+                    PWAs are powerful, but not universally ideal. This page helps you evaluate when a PWA is the right
+                    architectural choice,
+                    how to measure success, and what trade-offs to expect.
+                </p>
+
+                <p class="muted">
+                    Use this guidance to build a business case, pick implementation priorities, and choose appropriate
+                    metrics for success.
+                </p>
+            </section>
+
+            <section>
+                <h2>Benefits (why choose a PWA)</h2>
+
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">Reach</div>
+                        <div class="metric-desc">One codebase across devices — broad user reach without separate native
+                            apps.</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-value">Performance</div>
+                        <div class="metric-desc">Faster repeat loads and perceived responsiveness using caching
+                            strategies.</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-value">Engagement</div>
+                        <div class="metric-desc">Installability, push notifications and offline support improve
+                            retention and session depth.</div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-value">Cost</div>
+                        <div class="metric-desc">Lower development & maintenance costs compared to building multiple
+                            native apps.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Limitations & trade-offs</h2>
+                <ul class="analysis-list">
+                    <li><strong>Platform gaps:</strong> Not all OS features are available (or equally supported) across
+                        browsers and devices.</li>
+                    <li><strong>iOS limitations:</strong> Historically, Safari's PWA support lags behind Chromium — test
+                        carefully on iOS.</li>
+                    <li><strong>Complex native features:</strong> Heavy native APIs (e.g. advanced sensors or tightly
+                        integrated OS features) may still require native apps.</li>
+                    <li><strong>Perception:</strong> Some users still expect App Store presence — marketing and
+                        discoverability considerations apply.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>When to pick a PWA — decision checklist</h2>
+
+                <ol class="checklist">
+                    <li>Do you need cross-platform reach with a single codebase? ✅</li>
+                    <li>Is offline or intermittent connectivity important to user experience? ✅</li>
+                    <li>Are fast repeat loads and re-engagement a priority? ✅</li>
+                    <li>Do your required native features fall within web platform capabilities? (If no, consider
+                        native.)</li>
+                </ol>
+
+                <p class="muted">If you answered "yes" to most of the first three, a PWA is a strong candidate.</p>
+            </section>
+
+            <section>
+                <h2>Key metrics to measure success</h2>
+
+                <table class="metrics-table" summary="Key PWA metrics and why they matter">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>What to measure</th>
+                            <th>Why it matters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Load performance</td>
+                            <td>First Contentful Paint (FCP), Time to Interactive (TTI), Largest Contentful Paint (LCP)
+                            </td>
+                            <td>Faster load increases conversions and reduces bounce.</td>
+                        </tr>
+                        <tr>
+                            <td>Reliability</td>
+                            <td>Offline success rate, cache hit ratio</td>
+                            <td>Reliability improves usability in low-connectivity areas.</td>
+                        </tr>
+                        <tr>
+                            <td>Engagement</td>
+                            <td>Install rate, daily/weekly active users, session length</td>
+                            <td>Installations and longer sessions indicate higher user retention.</td>
+                        </tr>
+                        <tr>
+                            <td>Retention</td>
+                            <td>Return rate, churn</td>
+                            <td>Shows if the PWA retains users better than previous channels.</td>
+                        </tr>
+                        <tr>
+                            <td>Conversion</td>
+                            <td>Goal completions, revenue per visit</td>
+                            <td>Quantifies business impact of PWA improvements.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Testing & quality tools</h2>
+                <ul class="analysis-list">
+                    <li><strong>Lighthouse</strong> — run audits for PWA, Performance, Accessibility, and Best
+                        Practices. Use baseline and post-change audits to measure improvements.</li>
+                    <li><strong>DevTools (Application panel)</strong> — inspect manifest, service worker, caches, and
+                        simulate offline or throttled networks.</li>
+                    <li><strong>Workbox</strong> — accelerates implementing safe caching strategies with battle-tested
+                        recipes.</li>
+                    <li><strong>PWABuilder</strong> — quick manifest generation and platform tips; useful for
+                        prototyping and packaging.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Business considerations & ROI</h2>
+                <p>
+                    Building a PWA is an investment. Assess implementation cost vs. expected gains (reach, conversions,
+                    lower maintenance). Typical improvements reported by large PWA adopters include higher session
+                    depth, better retention, and reduced bundle sizes vs native apps.
+                </p>
+
+                <div class="note" style="margin-top:10px">
+                    Tip: run an A/B test (or feature-flagged rollout) to measure changes in engagement and conversions
+                    before committing fully.
+                </div>
+            </section>
+
+            <section>
+                <h2>Case studies (selected)</h2>
+                <ul class="analysis-list">
+                    <li><strong>Twitter Lite</strong> — increased pages per session and reduced data usage.</li>
+                    <li><strong>Starbucks</strong> — smaller app download size and better performance on slow networks.
+                    </li>
+                    <li><strong>Pinterest</strong> — improved engagement and increased conversions after PWA adoption.
+                    </li>
+                </ul>
+                <p class="muted">(Links to full case studies are available on the References page.)</p>
+            </section>
+
+            <section>
+                <h2>Quick action checklist (starter)</h2>
+                <ul class="checklist">
+                    <li>Enable HTTPS for the site.</li>
+                    <li>Create a basic `manifest.json` and include icons (192×192, 512×512).</li>
+                    <li>Implement a simple service worker with sensible caching (precaching static assets).</li>
+                    <li>Run Lighthouse and fix top PWA/performance issues.</li>
+                    <li>Measure baseline metrics, roll out changes, and re-measure.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Next Steps</h2>
+                <a href="implementation.html" class="btn">Go to Implementation →</a>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        Analytical guidance helps you choose the right architecture and measure real business impact.
+    </footer>
+
+    <!-- site script -->
+    <script src="js/site.js" defer></script>
+</body>
+
+</html>
