@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PWA Tutorial — References</title>
+
+  <meta name="description"
+    content="Curated references and authoritative resources for learning and building Progressive Web Apps (PWAs).">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;overflow:hidden;">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" aria-label="Go to home">
+        <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+      </a>
+
+      <div class="header-text">
+        <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+        <p class="header-subtitle">References — curated resources used in this tutorial</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav aria-label="Table of contents" id="sidebar">
+      <div class="sidebar-top">
+        <h2>Table of Contents</h2>
+        <button id="navToggle" class="nav-toggle" aria-controls="sidebar" aria-expanded="false">Menu</button>
+      </div>
+
+      <ul class="toc-list" id="tocList">
+
+        <li class="toc-item" data-page="intro.html">
+          <div class="toc-left">
+            <span class="toc-emoji">📘</span>
+            <div>
+              <a class="toc-link" href="intro.html">Introduction</a>
+              <span class="toc-meta">Start here — what is a PWA? (≈10 min)</span>
+            </div>
+          </div>
+          <span class="badge">Begin</span>
+        </li>
+
+        <li class="toc-item" data-page="history.html">
+          <div class="toc-left">
+            <span class="toc-emoji">📜</span>
+            <div>
+              <a class="toc-link" href="history.html">History</a>
+              <span class="toc-meta">Origins & milestones (≈8 min)</span>
+            </div>
+          </div>
+          <span class="badge">Story</span>
+        </li>
+
+        <li class="toc-item" data-page="analysis.html">
+          <div class="toc-left">
+            <span class="toc-emoji">🔍</span>
+            <div>
+              <a class="toc-link" href="analysis.html">Analytical Overview</a>
+              <span class="toc-meta">Pros, cons & use-cases (≈12 min)</span>
+            </div>
+          </div>
+          <span class="badge">Think</span>
+        </li>
+
+        <li class="toc-item" data-page="implementation.html">
+          <div class="toc-left">
+            <span class="toc-emoji">🛠️</span>
+            <div>
+              <a class="toc-link" href="implementation.html">Implementation</a>
+              <span class="toc-meta">Manifest, service worker & examples (≈30–45 min)</span>
+            </div>
+          </div>
+          <span class="badge">Build</span>
+        </li>
+
+        <li class="toc-item" data-page="activities.html">
+          <div class="toc-left">
+            <span class="toc-emoji">🧪</span>
+            <div>
+              <a class="toc-link" href="activities.html">Student Activities</a>
+              <span class="toc-meta">Labs & micro-quizzes (≈20 min)</span>
+            </div>
+          </div>
+          <span class="badge">Do</span>
+        </li>
+
+        <li class="toc-item toc-current" data-page="references.html">
+          <div class="toc-left">
+            <span class="toc-emoji">📚</span>
+            <div>
+              <a class="toc-link" href="references.html">References</a>
+              <span class="toc-meta">Further reading & tools</span>
+            </div>
+          </div>
+          <span class="badge">Read</span>
+        </li>
+
+      </ul>
+
+      <div class="toc-footer">
+        Tip: these links are the canonical references for PWA concepts, examples and tools.
+      </div>
+    </nav>
+
+    <main id="main">
+      <section>
+        <h2>References — authoritative resources</h2>
+        <p class="lede">Below are the primary resources and additional materials used to prepare this tutorial. They
+          include official guides, specs, tooling docs, and industry case studies.</p>
+        <p class="muted">Last updated: <time datetime="2025-12-09">December 9, 2025</time></p>
+      </section>
+
+      <section>
+        <h3>Core guides & tutorials</h3>
+        <ul class="intro-list">
+          <li>
+            <a href="https://web.dev/learn/pwa/welcome" target="_blank" rel="noopener noreferrer">web.dev — Learn
+              PWA</a><br>
+            Google's modular, hands-on PWA course (manifests, service workers, caching strategies, installability and
+            testing).
+          </li>
+
+          <li style="margin-top:8px">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank"
+              rel="noopener noreferrer">MDN Web Docs — Progressive web apps</a><br>
+            Developer-focused explanations and API reference for Service Workers, Cache Storage, and the Web App
+            Manifest.
+          </li>
+
+          <li style="margin-top:8px">
+            <a href="https://blog.pwabuilder.com/" target="_blank" rel="noopener noreferrer">PWABuilder Blog</a><br>
+            Practical tips, tutorials, and tooling guidance — useful for prototyping manifests, icons, and packaging.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Tools & libraries</h3>
+        <ul class="intro-list">
+          <li><a href="https://developers.google.com/web/tools/workbox" target="_blank"
+              rel="noopener noreferrer">Workbox</a> —
+            Google-maintained library for building service workers and common caching strategies.</li>
+          <li style="margin-top:8px"><a href="https://developers.google.com/web/tools/lighthouse" target="_blank"
+              rel="noopener noreferrer">Lighthouse</a> — Auditing tool for Performance, PWA, Accessibility and Best
+            Practices.</li>
+          <li style="margin-top:8px"><a href="https://developer.chrome.com/docs/devtools/" target="_blank"
+              rel="noopener noreferrer">Chrome DevTools — Application panel</a> — Inspect manifests, service workers,
+            cache storage
+            and simulate offline modes.</li>
+          <li style="margin-top:8px"><a href="https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker"
+              target="_blank" rel="noopener noreferrer">Chrome service worker samples</a> — Example service worker
+            patterns and
+            recipes.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Specifications & standards</h3>
+        <ul class="intro-list">
+          <li><a href="https://w3c.github.io/ServiceWorker/" target="_blank" rel="noopener noreferrer">Service Worker
+              specification
+              (W3C / Living Spec)</a> — low-level API and lifecycle details.</li>
+          <li style="margin-top:8px"><a href="https://www.w3.org/TR/appmanifest/" target="_blank"
+              rel="noopener noreferrer">Web App
+              Manifest specification</a> — authoritative spec for the manifest.json format and fields.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Case studies & industry examples</h3>
+        <ul class="intro-list">
+          <li><a href="https://developers.google.com/web/showcase/2016/twitter" target="_blank"
+              rel="noopener noreferrer">Twitter
+              Lite — case study</a> — performance and engagement improvements after PWA adoption.</li>
+          <li style="margin-top:8px"><a href="https://developers.google.com/web/showcase/2017/starbucks" target="_blank"
+              rel="noopener noreferrer">Starbucks PWA — case study</a> — smaller footprint and offline experience for
+            customers.
+          </li>
+          <li style="margin-top:8px"><a href="https://developers.google.com/web/showcase/2017/pinterest" target="_blank"
+              rel="noopener noreferrer">Pinterest PWA — case study</a> — engagement and conversion gains.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Additional reading</h3>
+        <ul class="intro-list">
+          <li><a href="https://web.dev/progressive-web-apps-checklist/" target="_blank" rel="noopener noreferrer">PWA
+              checklist —
+              web.dev</a> — practical checklist to evaluate PWA readiness.</li>
+          <li style="margin-top:8px"><a href="https://developers.google.com/web/fundamentals/instant-and-offline/"
+              target="_blank" rel="noopener noreferrer">Offline & caching fundamentals — Google Developers</a></li>
+          <li style="margin-top:8px"><a href="https://web.dev/measure/" target="_blank"
+              rel="noopener noreferrer">Measuring
+              performance — web.dev (Lab & Field metrics)</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Where samples in this tutorial came from</h3>
+        <p class="muted">The small sample manifest and service worker files included in this tutorial's
+          <code>/samples</code> folder are adapted from the examples and patterns demonstrated in the references above
+          (web.dev, MDN, and Workbox). They are simplified for teaching and should be reviewed and hardened before
+          production use.
+        </p>
+      </section>
+
+      <section>
+        <h3>Attribution & licensing</h3>
+        <p class="muted">Most referenced guides and tools are made available under terms specified by their respective
+          projects (Google Developers content, MDN, W3C specs, and open-source projects on GitHub). When copying
+          directly from tutorials or repos, please honor the original licensing, attributions, and copyright notices.
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    Use these references as your canonical sources while developing, testing and measuring PWAs. Happy building!
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+
+</html>

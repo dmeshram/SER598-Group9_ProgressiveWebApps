@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PWA Tutorial — History</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="History of Progressive Web Apps — timeline, milestones and early adopters.">
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" aria-label="Go to home">
+        <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+      </a>
+
+      <div class="header-text">
+        <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+        <p class="header-subtitle">History — origins, evolution & adoption</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <nav aria-label="Table of contents" id="sidebar">
+      <div class="sidebar-top">
+        <h2>Table of Contents</h2>
+        <button id="navToggle" class="nav-toggle" aria-controls="sidebar" aria-expanded="false">Menu</button>
+      </div>
+
+      <ul class="toc-list" id="tocList">
+        <li class="toc-item" data-page="intro.html">
+          <div class="toc-left">
+            <span class="toc-emoji">📘</span>
+            <div>
+              <a class="toc-link" href="intro.html">Introduction</a>
+              <span class="toc-meta">Start here — what is a PWA? (≈10 min)</span>
+            </div>
+          </div>
+          <span class="badge">Begin</span>
+        </li>
+
+        <li class="toc-item toc-current" data-page="history.html">
+          <div class="toc-left">
+            <span class="toc-emoji">📜</span>
+            <div>
+              <a class="toc-link" href="history.html">History</a>
+              <span class="toc-meta">Origins & milestones (≈8 min)</span>
+            </div>
+          </div>
+          <span class="badge">Story</span>
+        </li>
+
+        <li class="toc-item" data-page="analysis.html">
+          <div class="toc-left">
+            <span class="toc-emoji">🔍</span>
+            <div>
+              <a class="toc-link" href="analysis.html">Analytical Overview</a>
+              <span class="toc-meta">Pros, cons & use-cases (≈12 min)</span>
+            </div>
+          </div>
+          <span class="badge">Think</span>
+        </li>
+
+        <li class="toc-item" data-page="implementation.html">
+          <div class="toc-left">
+            <span class="toc-emoji">🛠️</span>
+            <div>
+              <a class="toc-link" href="implementation.html">Implementation</a>
+              <span class="toc-meta">Manifest, service worker & examples (≈30–45 min)</span>
+            </div>
+          </div>
+          <span class="badge">Build</span>
+        </li>
+
+        <li class="toc-item" data-page="activities.html">
+          <div class="toc-left">
+            <span class="toc-emoji">🧪</span>
+            <div>
+              <a class="toc-link" href="activities.html">Student Activities</a>
+              <span class="toc-meta">Labs & micro-quizzes (≈20 min)</span>
+            </div>
+          </div>
+          <span class="badge">Do</span>
+        </li>
+
+        <li class="toc-item" data-page="references.html">
+          <div class="toc-left">
+            <span class="toc-emoji">📚</span>
+            <div>
+              <a class="toc-link" href="references.html">References</a>
+              <span class="toc-meta">Further reading & tools</span>
+            </div>
+          </div>
+          <span class="badge">Read</span>
+        </li>
+      </ul>
+
+      <div class="toc-footer">
+        Tip: PWAs evolved alongside modern browser capabilities — watch for patterns as you read the timeline.
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h2>The Evolution of Progressive Web Apps</h2>
+
+        <p class="lede">
+          The history of Progressive Web Apps reflects the evolution of the modern web itself.
+          As browsers gained new capabilities, developers increasingly demanded native-like functionality on the web.
+          PWAs were introduced as a solution that combines reliability, performance, and cross-platform reach.
+        </p>
+
+        <p class="muted">
+          Although the term “Progressive Web App” was popularized in 2015, the technologies that make PWAs possible
+          were developed over several years—most notably the Service Worker specification.
+        </p>
+      </section>
+
+      <section>
+        <h2>Timeline of Key Milestones</h2>
+
+        <ul class="history-list">
+          <li>
+            <strong>2013–2014 — Early groundwork:</strong>
+            The W3C and browser vendors worked on the Service Worker APIs, enabling offline experiences and background
+            processing.
+          </li>
+
+          <li>
+            <strong>2015 — The term “PWA”:</strong>
+            Engineers and advocates began using “Progressive Web App” to describe web experiences that combine web reach
+            with app-like capabilities.
+          </li>
+
+          <li>
+            <strong>2016–2017 — Browser adoption accelerates:</strong>
+            Chrome, Firefox, and Opera implemented Service Worker support and related APIs; push notifications and Cache
+            APIs matured.
+          </li>
+
+          <li>
+            <strong>2018 — PWAs on desktop:</strong>
+            Chromium-based browsers added desktop installability; Microsoft embraced PWAs in the Microsoft Store.
+          </li>
+
+          <li>
+            <strong>2019–2021 — Wider platform support:</strong>
+            Safari and iOS gradually improved PWA support (with some limitations), and enterprises began experimental
+            and production rollouts.
+          </li>
+
+          <li>
+            <strong>2022–present — Mainstreaming:</strong>
+            PWAs continued to gain traction as platforms added deeper integration and developers adopted modern tooling
+            and patterns.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why PWAs Became Important</h2>
+
+        <p>
+          Historically, teams chose between the reach of websites and the capabilities of native apps. PWAs bridge that
+          gap by
+          delivering faster load times, offline resilience, installability, and a unified experience across devices.
+        </p>
+
+        <ul class="history-list">
+          <li><strong>Web apps:</strong> Accessible everywhere, but historically limited in offline and native
+            integration.</li>
+          <li><strong>Native apps:</strong> Powerful but expensive to build and maintain across multiple platforms.</li>
+        </ul>
+
+        <p>
+          PWAs combine the advantages of both: improved loading via caching, optional installability, and reduced
+          maintenance overhead.
+        </p>
+      </section>
+
+      <section>
+        <h2>Early Success Stories</h2>
+
+        <p>Several major companies reported measurable gains after adopting PWA strategies:</p>
+        <ul class="history-list">
+          <li><strong>Flipkart (2016):</strong> increased engagement and conversions in low-bandwidth markets.</li>
+          <li><strong>AliExpress (2016):</strong> reported significant lift in new-user conversions.</li>
+          <li><strong>Twitter Lite (2017):</strong> reduced data usage and improved performance for global users.</li>
+          <li><strong>Uber (2018):</strong> offered a fast web app optimized for developing markets and low-bandwidth
+            conditions.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Industry Adoption Examples</h2>
+
+        <ul class="history-list">
+          <li><strong>Twitter Lite:</strong> increased pages per session and engagement after adopting PWA architecture.
+          </li>
+          <li><strong>Starbucks:</strong> dramatically reduced client size and improved performance for intermittent
+            networks.</li>
+          <li><strong>Pinterest:</strong> reported higher time-on-site and conversions following their PWA rollout.</li>
+          <li><strong>Trivago:</strong> improved offline bookmarking and engagement metrics with a PWA.</li>
+        </ul>
+
+        <p class="muted">These success stories illustrate how performance and engagement improvements make PWAs
+          attractive to many organizations.</p>
+      </section>
+
+      <section>
+        <h2>Next Steps</h2>
+        <p>Now that you understand how PWAs came to be, explore how to evaluate them and when to use them.</p>
+        <a href="analysis.html" class="btn">Go to Analytical Overview →</a>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    This historical overview highlights how browser innovation and evolving web standards shaped modern PWAs.
+  </footer>
+
+  <script src="js/site.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PWA Tutorial — Student Activities</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html">
+                <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+            </a>
+
+            <div class="header-text">
+                <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+                <p class="header-subtitle">Student Activities — labs & micro-quizzes</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav aria-label="Table of contents" id="sidebar">
+            <div class="sidebar-top">
+                <h2>Table of Contents</h2>
+                <button id="navToggle" class="nav-toggle" aria-controls="sidebar" aria-expanded="false">Menu</button>
+            </div>
+
+            <ul class="toc-list" id="tocList">
+
+                <li class="toc-item" data-page="intro.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📘</span>
+                        <div>
+                            <a class="toc-link" href="intro.html">Introduction</a>
+                            <span class="toc-meta">Start here — what is a PWA? (≈10 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Begin</span>
+                </li>
+
+                <li class="toc-item" data-page="history.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📜</span>
+                        <div>
+                            <a class="toc-link" href="history.html">History</a>
+                            <span class="toc-meta">Origins & milestones (≈8 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Story</span>
+                </li>
+
+                <li class="toc-item" data-page="analysis.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🔍</span>
+                        <div>
+                            <a class="toc-link" href="analysis.html">Analytical Overview</a>
+                            <span class="toc-meta">Pros, cons & use-cases (≈12 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Think</span>
+                </li>
+
+                <li class="toc-item" data-page="implementation.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🛠️</span>
+                        <div>
+                            <a class="toc-link" href="implementation.html">Implementation</a>
+                            <span class="toc-meta">Manifest, service worker & examples (≈30–45 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Build</span>
+                </li>
+
+                <li class="toc-item toc-current" data-page="activities.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">🧪</span>
+                        <div>
+                            <a class="toc-link" href="activities.html">Student Activities</a>
+                            <span class="toc-meta">Labs & micro-quizzes (≈20 min)</span>
+                        </div>
+                    </div>
+                    <span class="badge">Do</span>
+                </li>
+
+                <li class="toc-item" data-page="references.html">
+                    <div class="toc-left">
+                        <span class="toc-emoji">📚</span>
+                        <div>
+                            <a class="toc-link" href="references.html">References</a>
+                            <span class="toc-meta">Further reading & tools</span>
+                        </div>
+                    </div>
+                    <span class="badge">Read</span>
+                </li>
+
+            </ul>
+
+
+            <div class="toc-footer">Tip: complete labs in order and mark them done — progress is stored locally in your
+                browser.</div>
+        </nav>
+
+        <!-- Main content -->
+        <main>
+            <section>
+                <h2>Activities — how to use this page</h2>
+                <p class="lede">This page contains short labs and a micro-quiz to reinforce the implementation concepts.
+                    Each lab includes objectives, steps, and a "Mark complete" button. Your progress is saved locally in
+                    the browser.</p>
+            </section>
+
+            <!-- Lab 1 -->
+            <section class="lab" id="lab-manifest">
+                <div class="lab-header">
+                    <div>
+                        <h3>Lab 1: Create a Tiny <code>manifest.json</code></h3>
+                        <p class="muted">Objective: create a minimal web app manifest and preview it in DevTools →
+                            Application → Manifest.</p>
+                    </div>
+                    <div class="lab-actions">
+                        <button class="btn lab-toggle" aria-expanded="false"
+                            data-target="lab-manifest-body">Open</button>
+                        <button class="btn lab-complete" data-lab="lab-manifest">Mark complete</button>
+                    </div>
+                </div>
+
+                <div class="lab-body" id="lab-manifest-body" hidden>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Create a file named <code>manifest.json</code> in your frontend's public folder.</li>
+                        <li>Paste the sample manifest below and adjust names/icons as needed.</li>
+                        <li>Open your site in Chrome, then open DevTools → Application → Manifest to verify fields.</li>
+                    </ol>
+
+                    <div class="code-toolbar" style="margin-top:8px">
+                        <button class="copy-btn" data-target="manifest-sample">Copy</button>
+                        <pre id="manifest-sample"><code>{
+  "name": "My PWA Demo",
+  "short_name": "PWA Demo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}</code></pre>
+                    </div>
+
+                    <p class="muted" style="margin-top:8px">Success criteria: Manifest loads in DevTools and shows app
+                        name, icons, and start_url.</p>
+                </div>
+            </section>
+
+            <!-- Lab 2 -->
+            <section class="lab" id="lab-serviceworker">
+                <div class="lab-header">
+                    <div>
+                        <h3>Lab 2: Add a Basic Service Worker (Offline)</h3>
+                        <p class="muted">Objective: register a simple service worker that precaches static assets and
+                            serves an offline page.</p>
+                    </div>
+                    <div class="lab-actions">
+                        <button class="btn lab-toggle" aria-expanded="false" data-target="lab-sw-body">Open</button>
+                        <button class="btn lab-complete" data-lab="lab-serviceworker">Mark complete</button>
+                    </div>
+                </div>
+
+                <div class="lab-body" id="lab-sw-body" hidden>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Create <code>service-worker.js</code> in your frontend public root.</li>
+                        <li>Paste the sample below, update the cache list to match your assets, and register it from
+                            your app.</li>
+                        <li>Open DevTools → Application → Service Workers to verify registration and try "Offline" mode.
+                        </li>
+                    </ol>
+
+                    <div class="code-toolbar" style="margin-top:8px">
+                        <button class="copy-btn" data-target="sw-sample">Copy</button>
+                        <pre id="sw-sample"><code>// service-worker.js (simple precache)
+const CACHE_NAME = 'pwa-example-v1';
+const PRECACHE_URLS = [
+  '/',
+  '/index.html',
+  '/offline.html',
+  '/css/styles.css',
+  '/js/main.js'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(PRECACHE_URLS))
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(resp => resp || fetch(event.request))
+      .catch(() => caches.match('/offline.html'))
+  );
+});</code></pre>
+                    </div>
+
+                    <p class="muted" style="margin-top:8px">Success criteria: Assets served from cache when offline;
+                        offline.html shown if navigation fails.</p>
+                </div>
+            </section>
+
+            <!-- Lab 3 -->
+            <section class="lab" id="lab-lighthouse">
+                <div class="lab-header">
+                    <div>
+                        <h3>Lab 3: Lighthouse Audit & Improvements</h3>
+                        <p class="muted">Objective: run Lighthouse PWA audit and apply two quick improvements (icons,
+                            manifest, or caching).</p>
+                    </div>
+                    <div class="lab-actions">
+                        <button class="btn lab-toggle" aria-expanded="false" data-target="lab-lh-body">Open</button>
+                        <button class="btn lab-complete" data-lab="lab-lighthouse">Mark complete</button>
+                    </div>
+                </div>
+
+                <div class="lab-body" id="lab-lh-body" hidden>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Open Chrome, load your app, open DevTools → Lighthouse.</li>
+                        <li>Run the PWA audit and note failing checks.</li>
+                        <li>Fix one issue (e.g., missing icons) and re-run the audit to show improvement.</li>
+                    </ol>
+
+                    <p class="muted" style="margin-top:8px">Success criteria: PWA score increases after applying
+                        changes.</p>
+                </div>
+            </section>
+
+            <!-- Micro-quiz -->
+            <section id="quiz-section">
+                <h3>Micro-quiz (3 questions)</h3>
+                <form id="quiz-form" autocomplete="off">
+                    <ol>
+                        <li>
+                            <p>Which file enables installability and controls app metadata?</p>
+                            <label><input type="radio" name="q1" value="a"> service-worker.js</label><br>
+                            <label><input type="radio" name="q1" value="b"> manifest.json</label><br>
+                            <label><input type="radio" name="q1" value="c"> index.html</label>
+                        </li>
+
+                        <li style="margin-top:8px">
+                            <p>Which caching strategy serves cached assets immediately and updates cache in background?
+                            </p>
+                            <label><input type="radio" name="q2" value="a"> Network-first</label><br>
+                            <label><input type="radio" name="q2" value="b"> Cache-only</label><br>
+                            <label><input type="radio" name="q2" value="c"> Stale-while-revalidate</label>
+                        </li>
+
+                        <li style="margin-top:8px">
+                            <p>To run the backend using Maven, which command is correct?</p>
+                            <label><input type="radio" name="q3" value="a"> mvn spring-boot:run</label><br>
+                            <label><input type="radio" name="q3" value="b"> mvn install -DskipTests</label><br>
+                            <label><input type="radio" name="q3" value="c"> npm run dev</label>
+                        </li>
+                    </ol>
+
+                    <p style="margin-top:10px">
+                        <button type="button" class="btn" id="submit-quiz">Submit Answers</button>
+                        <button type="button" class="btn" id="reset-quiz"
+                            style="background:#ffb84d;margin-left:8px;color:#3a1f00">Reset</button>
+                    </p>
+
+                    <div id="quiz-result" aria-live="polite" style="margin-top:12px"></div>
+
+                </form>
+            </section>
+
+            <section style="margin-top:18px">
+                <h3>Progress & next steps</h3>
+                <p class="muted">Your lab completion is saved locally. When you finish all labs, try the Implementation
+                    page to wire your PWA into the frontend build.</p>
+            </section>
+
+            <section>
+                <h2>Next Steps</h2>
+                <a href="references.html" class="btn">Go to References →</a>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        Hands-on practice helps cement the concepts. Use the References page for deeper reading.
+    </footer>
+
+    <script src="js/site.js" defer></script>
+    <script src="js/copy.js" defer></script>
+    <script src="js/activities.js" defer></script>
+</body>
+
+</html>
