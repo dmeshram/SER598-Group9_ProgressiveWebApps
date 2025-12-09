@@ -6,186 +6,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PWA Tutorial — History</title>
 
-  <style>
-    :root {
-      --maroon: #8C1D40;
-      --dark-maroon: #6b1330;
-      --gold: #FFC627;
-      --bg: #fff9f2;
-      --muted: #6b7280;
-      --card: #ffffff;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    body {
-      background: linear-gradient(180deg, #fffefc, var(--bg));
-      color: #111;
-      line-height: 1.5;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    header {
-      background: linear-gradient(90deg, var(--maroon), var(--dark-maroon));
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 5px solid var(--gold);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      position: relative;
-    }
-
-    .logo {
-      width: 120px;
-      height: auto;
-    }
-
-    header .center {
-      text-align: center;
-      flex: 1;
-    }
-
-    header h1 {
-      font-size: 28px;
-      margin: 0;
-    }
-
-    header .tag {
-      font-size: 15px;
-      opacity: 0.9;
-    }
-
-    .btn-home {
-      background: transparent;
-      color: white;
-      padding: 8px 14px;
-      border: 2px solid white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn-home:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 18px;
-      max-width: 1100px;
-      margin: 24px auto;
-      padding: 0 16px;
-    }
-
-    nav {
-      background: var(--card);
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 6px 18px rgba(11, 17, 22, 0.06);
-      height: fit-content;
-    }
-
-    nav h2 {
-      font-size: 15px;
-      color: var(--maroon);
-      margin-bottom: 10px
-    }
-
-    nav ul {
-      list-style: none
-    }
-
-    nav a {
-      display: block;
-      padding: 8px 10px;
-      color: var(--maroon);
-      text-decoration: none;
-      border-radius: 6px;
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      background: #fff2d6
-    }
-
-    main section {
-      background: var(--card);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 6px 18px rgba(11, 17, 22, 0.04);
-    }
-
-    h2 {
-      color: var(--maroon);
-      margin-bottom: 8px
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 14px
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--maroon);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 8px;
-    }
-
-    .btn:hover {
-      background: var(--dark-maroon)
-    }
-
-    @media(max-width:900px) {
-      .container {
-        grid-template-columns: 1fr
-      }
-
-      nav {
-        order: 2
-      }
-    }
-  </style>
-  <!-- Shared stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="History of Progressive Web Apps — timeline, milestones and early adopters.">
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="brand">
-      <img src="./assets/White_logo.jpg" class="logo" alt="ASU Logo">
-    </div>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" aria-label="Go to home">
+        <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+      </a>
 
-    <div class="center">
-      <h1>Progressive Web Apps Tutorial</h1>
-      <div class="tag">History of Progressive Web Apps</div>
+      <div class="header-text">
+        <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+        <p class="header-subtitle">History — origins, evolution & adoption</p>
+      </div>
     </div>
-
-    <a href="index.html" class="btn-home"> Home</a>
   </header>
 
-
-  <!-- Layout -->
   <div class="container">
 
-    <!-- Sidebar -->
     <nav aria-label="Table of contents" id="sidebar">
       <div class="sidebar-top">
         <h2>Table of Contents</h2>
@@ -193,7 +34,6 @@
       </div>
 
       <ul class="toc-list" id="tocList">
-
         <li class="toc-item" data-page="intro.html">
           <div class="toc-left">
             <span class="toc-emoji">📘</span>
@@ -205,7 +45,7 @@
           <span class="badge">Begin</span>
         </li>
 
-        <li class="toc-item" data-page="history.html">
+        <li class="toc-item toc-current" data-page="history.html">
           <div class="toc-left">
             <span class="toc-emoji">📜</span>
             <div>
@@ -216,7 +56,6 @@
           <span class="badge">Story</span>
         </li>
 
-        <!-- MOVED: Analytical Overview BEFORE Implementation -->
         <li class="toc-item" data-page="analysis.html">
           <div class="toc-left">
             <span class="toc-emoji">🔍</span>
@@ -260,7 +99,6 @@
           </div>
           <span class="badge">Read</span>
         </li>
-
       </ul>
 
       <div class="toc-footer">
@@ -268,79 +106,94 @@
       </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main>
-
       <section>
-        <h2>Origins of PWAs</h2>
-        <p>
-          While Google coined the term Progressive Web Apps (PWAs) in 2015, the core idea traces back to 2007 when Steve
-          Jobs introduced web apps for the iPhone—apps that looked and behaved like native ones, powered by Safari.
-          However, Apple soon pivoted to native app development, launching the App Store later that year.
+        <h2>The Evolution of Progressive Web Apps</h2>
+
+        <p class="lede">
+          The history of Progressive Web Apps reflects the evolution of the modern web itself.
+          As browsers gained new capabilities, developers increasingly demanded native-like functionality on the web.
+          PWAs were introduced as a solution that combines reliability, performance, and cross-platform reach.
+        </p>
+
+        <p class="muted">
+          Although the term “Progressive Web App” was popularized in 2015, the technologies that make PWAs possible
+          were developed over several years—most notably the Service Worker specification.
+        </p>
       </section>
 
       <section>
-        <h2>Google's Reinvention</h2>
-        <p>In 2015, Alex Russel and Frances Berriman reintroduced the concept as PWAs—web experiences combining native
-          app performance with web accessibility. Google and Microsoft heavily promoted PWAs as a bridge between native
-          and web apps.</p>
-      </section>
+        <h2>Timeline of Key Milestones</h2>
 
-      <section>
-        <h2>PWA History</h2>
-        <ul>
-          <li><strong>2014:</strong> Service Worker specification introduced, enabling offline functionality.</li>
-          <li><strong>2015:</strong> The term “Progressive Web App” was coined by Alex Russell and Frances Berriman.
+        <ul class="history-list">
+          <li>
+            <strong>2013–2014 — Early groundwork:</strong>
+            The W3C and browser vendors worked on the Service Worker APIs, enabling offline experiences and background
+            processing.
           </li>
-          <li><strong>2016–2018:</strong> Major browsers like Chrome, Firefox, and Edge began supporting PWA standards.
+
+          <li>
+            <strong>2015 — The term “PWA”:</strong>
+            Engineers and advocates began using “Progressive Web App” to describe web experiences that combine web reach
+            with app-like capabilities.
           </li>
-          <li><strong>2020–present:</strong> PWAs gained mainstream adoption; app stores and operating systems began
-            treating them as first-class apps.</li>
+
+          <li>
+            <strong>2016–2017 — Browser adoption accelerates:</strong>
+            Chrome, Firefox, and Opera implemented Service Worker support and related APIs; push notifications and Cache
+            APIs matured.
+          </li>
+
+          <li>
+            <strong>2018 — PWAs on desktop:</strong>
+            Chromium-based browsers added desktop installability; Microsoft embraced PWAs in the Microsoft Store.
+          </li>
+
+          <li>
+            <strong>2019–2021 — Wider platform support:</strong>
+            Safari and iOS gradually improved PWA support (with some limitations), and enterprises began experimental
+            and production rollouts.
+          </li>
+
+          <li>
+            <strong>2022–present — Mainstreaming:</strong>
+            PWAs continued to gain traction as platforms added deeper integration and developers adopted modern tooling
+            and patterns.
+          </li>
         </ul>
       </section>
-
-      <section>
-        <h2>Early Success Stories</h2>
-        <p> Major companies quickly embraced the technology:</p>
-        <ul>
-          <li><strong>Flipkart (2016):</strong> 3× more time spent, 70% higher conversions, 3× lower data use.</li>
-          <li><strong>AliExpress (2016):</strong> +104% new user conversions.
-          </li>
-          <li><strong>Twitter Lite (2017):</strong> −70% data usage.
-          </li>
-          <li><strong>Uber (2018):</strong> Fast web app for developing markets.</li>
-        </ul>
-      </section>
-
 
       <section>
         <h2>Why PWAs Became Important</h2>
 
         <p>
-          Before PWAs, users had to choose between the reach of websites and the functionality of native apps.
-          PWAs combine the best of both worlds — the accessibility of the web and the performance of native applications
-          —
-          making them a vital step in the evolution of modern software development.<br>
-          <br>
-          This is a reference taken from <strong><em>medium.com/progressivewebapps</em></strong>
+          Historically, teams chose between the reach of websites and the capabilities of native apps. PWAs bridge that
+          gap by
+          delivering faster load times, offline resilience, installability, and a unified experience across devices.
         </p>
 
         <ul class="history-list">
-          <li><strong>Web apps:</strong> accessible everywhere, but limited in offline capability and native
+          <li><strong>Web apps:</strong> Accessible everywhere, but historically limited in offline and native
             integration.</li>
-          <li><strong>Native apps:</strong> powerful and integrated, but expensive to build and deploy on multiple
-            platforms.</li>
+          <li><strong>Native apps:</strong> Powerful but expensive to build and maintain across multiple platforms.</li>
         </ul>
 
         <p>
-          PWAs bridge this gap by delivering:
+          PWAs combine the advantages of both: improved loading via caching, optional installability, and reduced
+          maintenance overhead.
         </p>
+      </section>
 
+      <section>
+        <h2>Early Success Stories</h2>
+
+        <p>Several major companies reported measurable gains after adopting PWA strategies:</p>
         <ul class="history-list">
-          <li>Fast loading and offline access via caching.</li>
-          <li>Installability without app stores.</li>
-          <li>Unified experience across devices.</li>
-          <li>Lower development and maintenance costs.</li>
+          <li><strong>Flipkart (2016):</strong> increased engagement and conversions in low-bandwidth markets.</li>
+          <li><strong>AliExpress (2016):</strong> reported significant lift in new-user conversions.</li>
+          <li><strong>Twitter Lite (2017):</strong> reduced data usage and improved performance for global users.</li>
+          <li><strong>Uber (2018):</strong> offered a fast web app optimized for developing markets and low-bandwidth
+            conditions.</li>
         </ul>
       </section>
 
@@ -348,28 +201,28 @@
         <h2>Industry Adoption Examples</h2>
 
         <ul class="history-list">
-          <li><strong>Twitter Lite:</strong> reported 65% increase in pages per session after adopting PWA architecture.
+          <li><strong>Twitter Lite:</strong> increased pages per session and engagement after adopting PWA architecture.
           </li>
-          <li><strong>Starbucks:</strong> their PWA is 99% smaller than the iOS app, dramatically improving reach.</li>
-          <li><strong>Pinterest:</strong> saw a 40% increase in time spent after launching their PWA.</li>
-          <li><strong>Trivago:</strong> offline bookmarking and improved engagement metrics after PWA rollout.</li>
+          <li><strong>Starbucks:</strong> dramatically reduced client size and improved performance for intermittent
+            networks.</li>
+          <li><strong>Pinterest:</strong> reported higher time-on-site and conversions following their PWA rollout.</li>
+          <li><strong>Trivago:</strong> improved offline bookmarking and engagement metrics with a PWA.</li>
         </ul>
 
-        <p class="muted">These success stories illustrate the performance and engagement benefits of PWAs across
-          industries.</p>
+        <p class="muted">These success stories illustrate how performance and engagement improvements make PWAs
+          attractive to many organizations.</p>
       </section>
 
       <section>
         <h2>Next Steps</h2>
-        <p>Now that you understand how PWAs came to be, explore the technologies that power them.</p>
+        <p>Now that you understand how PWAs came to be, explore how to evaluate them and when to use them.</p>
         <a href="analysis.html" class="btn">Go to Analytical Overview →</a>
       </section>
-
     </main>
   </div>
 
   <footer>
-    This historical overview highlights how technology and browser innovation shaped modern PWAs.
+    This historical overview highlights how browser innovation and evolving web standards shaped modern PWAs.
   </footer>
 
   <script src="js/site.js" defer></script>

@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>PWA Tutorial — Implementation</title>
 
-    <!-- Shared stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Header -->
+
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html">
@@ -26,7 +25,7 @@
     </header>
 
     <div class="container">
-        <!-- Sidebar -->
+
         <nav aria-label="Table of contents" id="sidebar">
             <div class="sidebar-top">
                 <h2>Table of Contents</h2>
@@ -34,7 +33,6 @@
             </div>
 
             <ul class="toc-list" id="tocList">
-
                 <li class="toc-item" data-page="intro.html">
                     <div class="toc-left">
                         <span class="toc-emoji">📘</span>
@@ -46,7 +44,7 @@
                     <span class="badge">Begin</span>
                 </li>
 
-                <li class="toc-item" data-page="history.html">
+                <li class="toc-item toc-current" data-page="history.html">
                     <div class="toc-left">
                         <span class="toc-emoji">📜</span>
                         <div>
@@ -57,7 +55,6 @@
                     <span class="badge">Story</span>
                 </li>
 
-                <!-- MOVED: Analytical Overview BEFORE Implementation -->
                 <li class="toc-item" data-page="analysis.html">
                     <div class="toc-left">
                         <span class="toc-emoji">🔍</span>
@@ -101,141 +98,121 @@
                     </div>
                     <span class="badge">Read</span>
                 </li>
-
             </ul>
 
-            <div class="toc-footer">Tip: after cloning the repo run the backend and frontend locally using the commands
-                below.</div>
+            <div class="toc-footer">Tip: run backend and frontend separately using commands below.</div>
         </nav>
 
-        <!-- Main content -->
         <main>
 
             <section>
                 <h2>Project repository (GitHub)</h2>
-                <p class="muted">The full project source is available on GitHub. Replace the placeholder URL below with
-                    your repository link.</p>
+                <p class="muted">Replace the placeholder with your actual repo URL.</p>
 
-                <p><strong>Repository (placeholder):</strong></p>
-                <p><a id="repoLink" href="https://github.com/your-repo" target="_blank"
-                        rel="noopener">https://github.com/your-repo</a></p>
-
-                <p class="muted" style="margin-top:8px">If you want, upload your ZIP and I will replace the placeholder
-                    link and paste a short repo README snippet directly into this page.</p>
+                <p><strong>Repository:</strong></p>
+                <p><a href="https://github.com/dmeshram/Group9-SER598-AdvancedProject-AppImplementation.git"
+                        target="_blank"
+                        rel="noopener">https://github.com/dmeshram/Group9-SER598-AdvancedProject-AppImplementation.git</a>
+                </p>
             </section>
 
             <section>
                 <h2>Overview of implementation</h2>
-                <p class="lede">
-                    This project uses a two-tier architecture:
-                </p>
-                <ul>
-                    <li><strong>Backend:</strong> Spring Boot (Maven) — provides REST APIs used by the frontend.</li>
-                    <li><strong>Frontend:</strong> Modern JS app (Node/npm) — serves the UI and PWA assets (manifest,
-                        service worker sample).</li>
-                </ul>
+                <p>This project has two components:</p>
 
-                <p class="muted">Below are the exact commands to run each part locally.</p>
+                <ul>
+                    <li><strong>Backend:</strong> Spring Boot (Maven)</li>
+                    <li><strong>Frontend:</strong> Node + npm (dev server)</li>
+                </ul>
             </section>
 
             <section>
                 <h2>Prerequisites</h2>
                 <ul class="analysis-list">
-                    <li>Java 11+ (or the Java version specified in your `pom.xml`). Confirm with
-                        <code>java -version</code>.
-                    </li>
-                    <li>Maven (3.6+) — used to build and run the Spring Boot backend. Confirm with <code>mvn -v</code>.
-                    </li>
-                    <li>Node.js (14+) and npm — used for frontend toolchain. Confirm with <code>node -v</code> and
-                        <code>npm -v</code>.
-                    </li>
-                    <li>Git — to clone the repository.</li>
+                    <li>Java 11+ → <code>java -version</code></li>
+                    <li>Maven 3.6+ → <code>mvn -v</code></li>
+                    <li>Node.js 14+ → <code>node -v</code></li>
+                    <li>npm → <code>npm -v</code></li>
                 </ul>
             </section>
 
             <section>
                 <h2>Run backend (Spring Boot)</h2>
-                <p class="muted">From the repository root, change into the backend module (if applicable) and run:</p>
 
-                <div class="code-toolbar" style="position:relative;margin-top:8px">
+                <div class="code-toolbar">
                     <button class="copy-btn" data-target="cmd-backend">Copy</button>
                     <pre id="cmd-backend"><code>mvn spring-boot:run</code></pre>
                 </div>
 
-                <p class="muted" style="margin-top:8px">
-                    Notes:
-                <ul>
-                    <li>If your backend is in a subfolder (for example `server/` or `backend/`), run the command from
-                        that folder.</li>
-                    <li>To build a production JAR: <code>mvn clean package</code> then run:
-                        <code>java -jar target/your-app.jar</code>.
-                    </li>
-                    <li>Adjust JVM memory or profiles with environment or Maven properties as needed (e.g.
-                        <code>-Dspring.profiles.active=dev</code>).
-                    </li>
+                <ul class="analysis-list">
+                    <li>Run inside your backend folder if structured as <code>/backend</code></li>
+                    <li>Build JAR: <code>mvn clean package</code></li>
+                    <li>Run JAR: <code>java -jar target/app.jar</code></li>
                 </ul>
-                </p>
             </section>
 
             <section>
                 <h2>Run frontend (Node / npm)</h2>
-                <p class="muted">From the frontend folder (commonly `frontend/` or `client/`), run the usual install &
-                    dev commands:</p>
 
-                <div class="code-toolbar" style="position:relative;margin-top:8px">
-                    <button class="copy-btn" data-target="cmd-frontend-install">Copy</button>
-                    <pre id="cmd-frontend-install"><code>npm install</code></pre>
+                <div class="code-toolbar">
+                    <button class="copy-btn" data-target="cmd-install">Copy</button>
+                    <pre id="cmd-install"><code>npm install</code></pre>
                 </div>
 
-                <div class="code-toolbar" style="position:relative;margin-top:8px">
-                    <button class="copy-btn" data-target="cmd-frontend-dev">Copy</button>
-                    <pre id="cmd-frontend-dev"><code>npm run dev</code></pre>
+                <div class="code-toolbar" style="margin-top:8px">
+                    <button class="copy-btn" data-target="cmd-dev">Copy</button>
+                    <pre id="cmd-dev"><code>npm run dev</code></pre>
                 </div>
 
-                <p class="muted" style="margin-top:8px">
-                    Typical notes:
-                <ul>
-                    <li>If the frontend expects a specific API base URL, set the environment variable or config
-                        (example: <code>VITE_API_BASE_URL</code>, <code>REACT_APP_API_URL</code>, or a `.env` file;
-                        check your frontend README).</li>
-                    <li>Default dev server ports: frontend often runs on <code>http://localhost:3000</code> or
-                        <code>5173</code> (Vite). Backend often uses <code>http://localhost:8080</code>. Adjust proxy or
-                        CORS settings accordingly.
-                    </li>
-                    <li>For production builds, run <code>npm run build</code> and serve the static output (or integrate
-                        with backend). </li>
+                <ul class="analysis-list">
+                    <li>Dev port: usually <code>3000</code> or <code>5173</code></li>
+                    <li>Production build: <code>npm run build</code></li>
                 </ul>
-                </p>
             </section>
 
             <section>
-                <h2>Recommended repository README snippet</h2>
-                <p class="muted">Add this to the top level `README.md` of your repo so contributors can get started
-                    quickly. Copy with the button.</p>
+                <h2>Recommended README snippet</h2>
 
-                <div class="code-toolbar" style="position:relative;margin-top:8px">
+                <div class="code-toolbar">
                     <button class="copy-btn" data-target="readme-snippet">Copy</button>
+
                     <pre id="readme-snippet"><code># ProjectName
 
-## Quick start
-
-### Prerequisites
-- Java 11+
-- Maven 3.6+
-- Node.js 14+ and npm
-- Git
+## Quick Start
 
 ### Backend (Spring Boot)
-```bash
-cd backend        # or the backend folder in the repo
+cd backend
 mvn spring-boot:run
-# or build a jar:
+# OR build
 mvn clean package
 java -jar target/your-app.jar
 
-                    </section>
+### Frontend (Node)
+cd frontend
+npm install
+npm run dev
+npm run build
+</code></pre>
+                </div>
 
-                    <section>
+            </section>
+
+            <section>
                 <h2>Next Steps</h2>
+                <p>Continue to the activities page to test offline mode, caching, and installation.</p>
                 <a href="activities.html" class="btn">Go to Activities →</a>
             </section>
+
+        </main>
+    </div>
+
+    <footer>
+        Implementation guide — backend, frontend & sample commands.
+    </footer>
+
+    <script src="js/site.js" defer></script>
+    <script src="js/copy.js" defer></script>
+
+</body>
+
+</html>
