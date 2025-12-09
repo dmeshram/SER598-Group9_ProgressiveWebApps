@@ -6,165 +6,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PWA Tutorial — Introduction</title>
 
-  <style>
-    :root {
-      --maroon: #8C1D40;
-      --dark-maroon: #6b1330;
-      --gold: #FFC627;
-      --bg: #fff9f2;
-      --muted: #6b7280;
-      --card: #ffffff;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    body {
-      background: linear-gradient(180deg, #fffefc, var(--bg));
-      color: #111;
-      line-height: 1.5;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    header {
-      background: linear-gradient(90deg, var(--maroon), var(--dark-maroon));
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-top: 5px solid var(--gold);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      position: relative;
-    }
-
-    .logo {
-      width: 120px;
-      height: auto;
-      position: absolute;
-      left: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    header h1 {
-      font-size: 28px;
-      margin: 4px 0
-    }
-
-    header .tag {
-      font-size: 14px;
-      opacity: 0.9
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 18px;
-      max-width: 1100px;
-      margin: 24px auto;
-      padding: 0 16px;
-    }
-
-    nav {
-      background: var(--card);
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 6px 18px rgba(11, 17, 22, 0.06);
-      height: fit-content;
-    }
-
-    nav h2 {
-      font-size: 15px;
-      color: var(--maroon);
-      margin-bottom: 10px
-    }
-
-    nav ul {
-      list-style: none
-    }
-
-    nav a {
-      display: block;
-      padding: 8px 10px;
-      color: var(--maroon);
-      text-decoration: none;
-      border-radius: 6px;
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      background: #fff2d6
-    }
-
-    main section {
-      background: var(--card);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 6px 18px rgba(11, 17, 22, 0.04);
-    }
-
-    h2 {
-      color: var(--maroon);
-      margin-bottom: 8px
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 14px
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--maroon);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 8px;
-    }
-
-    .btn:hover {
-      background: var(--dark-maroon)
-    }
-
-    @media(max-width:900px) {
-      .container {
-        grid-template-columns: 1fr
-      }
-
-      nav {
-        order: 2
-      }
-    }
-  </style>
-  <!-- Shared stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Intro to Progressive Web Apps: fundamentals, building blocks, and starting labs.">
 </head>
 
 <body>
 
-  <header>
-    <img src="./assets/White_logo.jpg" class="logo" alt="ASU Logo">
-    <div>
-      <h1>Progressive Web Apps Tutorial</h1>
-      <div class="tag">
-        <h3>Introduction</h3>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" aria-label="Go to home">
+        <img src="./assets/White_logo.jpg" class="header-logo" alt="Project Logo">
+      </a>
+
+      <div class="header-text">
+        <h1 class="header-title">Progressive Web Apps Tutorial</h1>
+        <p class="header-subtitle">Introduction — core concepts and fundamentals</p>
       </div>
     </div>
   </header>
 
   <div class="container">
 
-    <!-- Sidebar -->
     <nav aria-label="Table of contents" id="sidebar">
       <div class="sidebar-top">
         <h2>Table of Contents</h2>
@@ -172,8 +34,6 @@
       </div>
 
       <ul class="toc-list" id="tocList">
-
-
 
         <li class="toc-item" data-page="intro.html">
           <div class="toc-left">
@@ -197,7 +57,6 @@
           <span class="badge">Story</span>
         </li>
 
-        <!-- MOVED: Analytical Overview BEFORE Implementation -->
         <li class="toc-item" data-page="analysis.html">
           <div class="toc-left">
             <span class="toc-emoji">🔍</span>
@@ -235,7 +94,7 @@
           <div class="toc-left">
             <span class="toc-emoji">📚</span>
             <div>
-              <a class="toc-link" href="references.html">References</a>
+              <a class="toc-link" href="references.html" target="_blank" rel="noopener">References</a>
               <span class="toc-meta">Further reading & tools</span>
             </div>
           </div>
@@ -244,89 +103,85 @@
 
       </ul>
 
-
       <div class="toc-footer">Tip: Use DevTools → Application to explore manifests & service workers.</div>
     </nav>
 
     <!-- MAIN CONTENT -->
     <main>
-
-      <!-- What is a PWA -->
       <section>
         <h2>What Are Progressive Web Apps (PWAs)?</h2>
+
         <p>
-          A Progressive Web App (PWA) is an app that's built using web platform technologies like HTML, CSS, and
-          JavaScript but offers a user experience similar to native apps.<br>
-          A PWA can run on multiple devices and platforms and devices using a single codebase.<br>
-          A PWA can be also accessed offline once installed in a device.<br>
-          <em> *This is a reference taken from developer.mozilla.org </em>
+          A Progressive Web App (PWA) is an app built with standard web technologies (HTML, CSS, JavaScript) that
+          provides a user experience similar to native apps. PWAs can run across multiple devices and platforms from a
+          single codebase and may be installable to a device's home screen.
+        </p>
+
+        <p class="muted">
+          They rely on platform features like the Web App Manifest and Service Workers to enable installability and
+          offline
+          capabilities. (Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
+            target="_blank" rel="noopener">MDN Web Docs</a>)
         </p>
       </section>
 
-      <!-- Key characteristics -->
       <section>
         <h2>Key Characteristics of PWAs</h2>
         <ul class="intro-list">
-          <li><strong>Responsive:</strong> Adapts to any screen size — mobile, tablet, desktop.</li>
-          <li><strong>Reliable:</strong> Works offline or on flaky networks using cached resources.</li>
-          <li><strong>Fast:</strong> Loads quickly thanks to efficient caching and optimized assets.</li>
-          <li><strong>App-like:</strong> Runs in standalone mode, has a splash screen, and smooth interactions.</li>
-          <li><strong>Secure:</strong> Served over HTTPS to ensure security and data integrity.</li>
+          <li><strong>Responsive:</strong> Adapts to any screen size — phone, tablet, desktop.</li>
+          <li><strong>Reliable:</strong> Works offline or on flaky networks using caching.</li>
+          <li><strong>Fast:</strong> Optimized loading for perceived performance.</li>
+          <li><strong>App-like:</strong> Launches in standalone mode with a splash screen.</li>
+          <li><strong>Secure:</strong> Served over HTTPS.</li>
           <li><strong>Installable:</strong> Can be added to the home screen without an app store.</li>
         </ul>
       </section>
 
-      <!-- Building blocks -->
       <section>
         <h2>Core Building Blocks</h2>
 
         <ul class="intro-list">
-          <li><strong>Web App Manifest:</strong> A JSON file that defines the app’s metadata — name, icons, colors,
-            layout mode, and start URL — enabling installation.</li>
-          <li><strong>Service Worker:</strong> A background script that handles caching, routing, offline capability,
-            and optional features like push notifications.</li>
-          <li><strong>HTTPS:</strong> Required for service workers and ensures secure interactions.</li>
-          <li><strong>Progressive Enhancement:</strong> Features scale with user capability rather than requiring all
-            browsers to support everything.</li>
+          <li><strong>Web App Manifest:</strong> A JSON file that defines the app’s metadata — name, icons, start URL,
+            and display mode.</li>
+          <li><strong>Service Worker:</strong> Background script used for caching, offline behavior, and background
+            sync.</li>
+          <li><strong>HTTPS:</strong> Required for service workers and secure features.</li>
+          <li><strong>Progressive Enhancement:</strong> Features should enhance the experience where supported, and
+            degrade gracefully elsewhere.</li>
         </ul>
       </section>
 
-      <!-- How it works -->
       <section>
         <h2>How PWAs Work</h2>
 
         <ol class="intro-steps">
-          <li>The user visits your website for the first time.</li>
-          <li>The browser downloads and installs the service worker.</li>
-          <li>The service worker caches key assets (HTML, CSS, JS, icons).</li>
-          <li>On future visits, the app loads instantly from cache.</li>
-          <li>The user can choose to install the PWA via the browser.</li>
+          <li>First visit loads the site from the network.</li>
+          <li>Service worker installs and precaches key assets.</li>
+          <li>Subsequent visits use cached assets or network responses based on chosen strategy.</li>
+          <li>Manifest enables installability; the browser may prompt to add to home screen.</li>
         </ol>
       </section>
 
-      <!-- Why learn -->
       <section>
         <h2>Why Learn PWAs?</h2>
 
         <p>
-          PWAs provide a powerful way to build cross-platform experiences using a single codebase. They offer instant
-          loading, offline resilience, lightweight installation, and wide reach — making them ideal for modern web
-          applications.
+          PWAs allow developers to offer native-like experiences while leveraging a single web codebase — ideal for
+          broad reach
+          and reduced maintenance overhead.
         </p>
       </section>
 
-      <!-- References -->
       <section>
         <h2>Recommended References</h2>
         <ul class="intro-list">
-          <li><a href="https://web.dev/learn/pwa/welcome" target="_blank">web.dev — Learn PWA</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank">MDN — PWA
-              Docs</a></li>
-          <li><a href="https://blog.pwabuilder.com/" target="_blank">PWABuilder Blog</a></li>
+          <li><a href="https://web.dev/learn/pwa/welcome" target="_blank" rel="noopener">web.dev — Learn PWA</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank"
+              rel="noopener">MDN — PWA Docs</a></li>
+          <li><a href="https://blog.pwabuilder.com/" target="_blank" rel="noopener">PWABuilder Blog</a></li>
         </ul>
       </section>
 
-      <!-- Next -->
       <section>
         <h2>Continue Learning</h2>
         <p>Next, explore how PWAs evolved and why they became a major trend in web development.</p>
@@ -340,7 +195,6 @@
     This introduction provides foundational concepts. Continue exploring implementation details in the next section.
   </footer>
 
-  <!-- Script for sidebar behaviors -->
   <script src="js/site.js" defer></script>
 
 </body>
