@@ -23,9 +23,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* -----------------------
-   Header — Professional Layout
------------------------- */
+/* Header — logo left, title centered (replace previous header rules) */
 
 .site-header {
     background: linear-gradient(90deg, var(--maroon), var(--dark-maroon));
@@ -35,40 +33,92 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Keep a centered container but allow absolute centering of the title */
 .header-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 16px;
+    position: relative;
+    /* needed for absolute centering of header-text */
     display: flex;
     align-items: center;
-    gap: 22px;
+    height: 70px;
+    /* gives a stable vertical center */
 }
 
+/* Logo stays at the left edge of the header-inner */
 .header-logo {
     width: 120px;
     height: 70px;
     object-fit: cover;
     border-radius: 8px;
+    z-index: 2;
+    /* keep above the centered title */
 }
 
+/* Title block is absolutely centered in the header-inner */
 .header-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none;
+    /* allow clicks through to the logo if they overlap */
+    width: min(70%, 700px);
+    /* prevents the title from stretching too wide */
+}
+
+/* Make only the text itself clickable/selectable, not the whole centered area */
+.header-text * {
+    pointer-events: auto;
 }
 
 .header-title {
     font-size: 32px;
-    /* Bigger title */
     font-weight: 700;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.1;
+    color: white;
 }
 
 .header-subtitle {
     font-size: 14px;
-    opacity: 0.9;
+    opacity: 0.95;
     margin-top: 4px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* MOBILE: stack logo and title to avoid overlap and center everything */
+@media (max-width: 780px) {
+    .header-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 12px 16px;
+    }
+
+    .header-logo {
+        width: 96px;
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    .header-text {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        pointer-events: auto;
+    }
+
+    .header-title {
+        font-size: 24px;
+    }
+
+    .header-subtitle {
+        font-size: 13px;
+    }
 }
 
 /* Responsive header improvements */
