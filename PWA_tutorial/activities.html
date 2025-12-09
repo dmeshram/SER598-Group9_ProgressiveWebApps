@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>PWA Tutorial — Student Activities</title>
 
-    <!-- Shared stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html">
@@ -26,7 +24,6 @@
     </header>
 
     <div class="container">
-        <!-- Sidebar -->
         <nav aria-label="Table of contents" id="sidebar">
             <div class="sidebar-top">
                 <h2>Table of Contents</h2>
@@ -57,7 +54,6 @@
                     <span class="badge">Story</span>
                 </li>
 
-                <!-- MOVED: Analytical Overview BEFORE Implementation -->
                 <li class="toc-item" data-page="analysis.html">
                     <div class="toc-left">
                         <span class="toc-emoji">🔍</span>
@@ -80,7 +76,7 @@
                     <span class="badge">Build</span>
                 </li>
 
-                <li class="toc-item" data-page="activities.html">
+                <li class="toc-item toc-current" data-page="activities.html">
                     <div class="toc-left">
                         <span class="toc-emoji">🧪</span>
                         <div>
@@ -278,7 +274,8 @@ self.addEventListener('fetch', event => {
                             style="background:#ffb84d;margin-left:8px;color:#3a1f00">Reset</button>
                     </p>
 
-                    <div id="quiz-result" style="margin-top:12px"></div>
+                    <div id="quiz-result" aria-live="polite" style="margin-top:12px"></div>
+
                 </form>
             </section>
 
@@ -300,11 +297,8 @@ self.addEventListener('fetch', event => {
         Hands-on practice helps cement the concepts. Use the References page for deeper reading.
     </footer>
 
-    <!-- site script -->
     <script src="js/site.js" defer></script>
-    <!-- copy helper (if not present already) -->
     <script src="js/copy.js" defer></script>
-    <!-- activities behavior -->
     <script src="js/activities.js" defer></script>
 </body>
 

@@ -8,7 +8,6 @@
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
 
-/* RESET */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,7 +22,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Header — logo left, title centered (replace previous header rules) */
 
 .site-header {
     background: linear-gradient(90deg, var(--maroon), var(--dark-maroon));
@@ -33,42 +31,34 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Keep a centered container but allow absolute centering of the title */
 .header-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 16px;
     position: relative;
-    /* needed for absolute centering of header-text */
     display: flex;
     align-items: center;
     height: 70px;
-    /* gives a stable vertical center */
 }
 
-/* Logo stays at the left edge of the header-inner */
 .header-logo {
     width: 120px;
     height: 70px;
     object-fit: cover;
     border-radius: 8px;
     z-index: 2;
-    /* keep above the centered title */
 }
 
-/* Title block is absolutely centered in the header-inner */
 .header-text {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     pointer-events: none;
-    /* allow clicks through to the logo if they overlap */
     width: min(70%, 700px);
-    /* prevents the title from stretching too wide */
+
 }
 
-/* Make only the text itself clickable/selectable, not the whole centered area */
 .header-text * {
     pointer-events: auto;
 }
@@ -88,7 +78,6 @@ body {
     color: rgba(255, 255, 255, 0.92);
 }
 
-/* MOBILE: stack logo and title to avoid overlap and center everything */
 @media (max-width: 780px) {
     .header-inner {
         display: flex;
@@ -121,7 +110,6 @@ body {
     }
 }
 
-/* Responsive header improvements */
 @media (max-width: 600px) {
     .header-inner {
         flex-direction: column;
@@ -137,8 +125,6 @@ body {
     }
 }
 
-
-/* Layout */
 .container {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -148,7 +134,6 @@ body {
     padding: 0 16px;
 }
 
-/* Sidebar */
 nav {
     background: linear-gradient(180deg, #fff, #fffaf7);
     border-radius: 12px;
@@ -253,7 +238,6 @@ nav h2::before {
     color: var(--muted);
 }
 
-/* Main content */
 main section {
     background: var(--card);
     border-radius: 10px;
@@ -286,7 +270,6 @@ h2 {
     background: var(--dark-maroon)
 }
 
-/* playful extras */
 .lede {
     font-size: 15px;
     color: #222;
@@ -356,7 +339,6 @@ footer {
     font-size: 13px
 }
 
-/* Responsive */
 @media(max-width:900px) {
     .container {
         grid-template-columns: 1fr
@@ -371,14 +353,9 @@ footer {
     }
 }
 
-/* -------------------------
-  Sidebar toggle (mobile)
-   - keeps desktop unchanged, collapses sidebar on small screens
--------------------------- */
 
 .nav-toggle {
     display: none;
-    /* shown only on small screens via media query */
     background: transparent;
     border: 1px solid rgba(0, 0, 0, 0.06);
     padding: 6px 8px;
@@ -389,15 +366,13 @@ footer {
     cursor: pointer;
 }
 
-/* On small screens hide sidebar by default; show toggle */
+
 @media (max-width: 900px) {
 
-    /* make the sidebar collapsible */
     nav#sidebar {
         position: relative;
     }
 
-    /* hide actual nav content by default; user can open it */
     nav#sidebar:not(.open) .toc-list,
     nav#sidebar:not(.open) .toc-footer {
         display: none;
@@ -407,13 +382,11 @@ footer {
         display: inline-block;
     }
 
-    /* when opened, ensure nav appears visually above content */
     nav#sidebar.open {
         z-index: 80;
         box-shadow: 0 20px 40px rgba(11, 17, 22, 0.12);
     }
 
-    /* a subtle animation when opening */
     nav#sidebar .toc-list {
         animation: slideDown 220ms ease;
     }
@@ -430,9 +403,6 @@ footer {
         }
     }
 
-    /* -----------------------------
-   INTRO PAGE — SPECIFIC STYLES
------------------------------- */
 
     .lede {
         font-size: 15px;
@@ -466,10 +436,6 @@ footer {
         justify-content: space-between;
     }
 
-    /* -----------------------------
-   HISTORY PAGE — SPECIFIC STYLES
------------------------------- */
-
     .history-list {
         margin-top: 10px;
         padding-left: 18px;
@@ -486,17 +452,12 @@ footer {
         color: #333;
     }
 
-    /* -----------------------------
-   ANALYTICAL OVERVIEW — PAGE STYLES
------------------------------- */
-
     .lede {
         font-size: 15px;
         margin-bottom: 10px;
         color: #333;
     }
 
-    /* Metrics grid (4 cards) */
     .metrics-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -523,7 +484,6 @@ footer {
         color: var(--muted);
     }
 
-    /* Analysis lists and checklist */
     .analysis-list,
     .checklist {
         margin-top: 10px;
@@ -536,7 +496,6 @@ footer {
         margin-bottom: 8px;
     }
 
-    /* Metrics table */
     .metrics-table {
         width: 100%;
         border-collapse: collapse;
@@ -566,7 +525,6 @@ footer {
         font-weight: 600;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 900px) {
         .metrics-grid {
             grid-template-columns: 1fr;
@@ -578,7 +536,6 @@ footer {
         }
     }
 
-    /* Code block / copy button styles (implementation page) */
     .code-toolbar {
         position: relative;
     }
@@ -611,9 +568,6 @@ footer {
         font-size: 13px;
     }
 
-    /* -----------------------------
-   ACTIVITIES PAGE — STYLES
------------------------------- */
 
     .lab {
         border-radius: 10px;
@@ -674,7 +628,6 @@ footer {
         font-size: 13px;
     }
 
-    /* Quiz styles */
     #quiz-form ol {
         padding-left: 18px;
     }
@@ -684,7 +637,6 @@ footer {
         color: var(--maroon);
     }
 
-    /* small responsive tweaks */
     @media (max-width: 900px) {
         .lab-header {
             flex-direction: column;
@@ -696,6 +648,26 @@ footer {
             width: 100%;
             justify-content: flex-start;
         }
+    }
+
+    .lab-done {
+        border: 1px solid rgba(34, 34, 34, 0.04);
+        opacity: 0.95;
+        background: linear-gradient(180deg, #fcfff7, #ffffff);
+        position: relative;
+    }
+
+    .lab-done::after {
+        content: "✓ Completed";
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        background: #eaf9ef;
+        color: #0b6b3a;
+        border-radius: 6px;
+        padding: 4px 8px;
+        font-weight: 700;
+        font-size: 12px;
     }
 
 }

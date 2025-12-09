@@ -1,136 +1,174 @@
-// js/activities.js
-// Handles lab accordion, mark-complete with localStorage, and quiz logic
-
 (function () {
-  'use strict';
+  const LS_KEY = 'pwa_activities_progress_v1';
 
-  // LAB ACCORDION TOGGLE
-  document.addEventListener('click', function (e) {
-    var t = e.target;
-    if (t.matches('.lab-toggle')) {
-      var id = t.getAttribute('data-target');
-      var body = document.getElementById(id);
-      var expanded = t.getAttribute('aria-expanded') === 'true';
-      if (!body) return;
-      if (expanded) {
-        body.hidden = true;
-        t.setAttribute('aria-expanded', 'false');
-        t.textContent = 'Open';
-      } else {
-        body.hidden = false;
-        t.setAttribute('aria-expanded', 'true');
-        t.textContent = 'Close';
+
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      console.warn('Could not read saved progress', e);
+      return {};
+    }
+  }
+
+  function saveState(state) {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.warn('Could not save progress', e);
+    }
+  }
+
+  function toggleLab(button) {
+    const targetId = button.dataset.target;
+    if (!targetId) return;
+    const body = document.getElementById(targetId);
+    if (!body) return;
+
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      body.hidden = true;
+      button.setAttribute('aria-expanded', 'false');
+      button.textContent = 'Open';
+    } else {
+      body.hidden = false;
+      button.setAttribute('aria-expanded', 'true');
+      button.textContent = 'Close';
+    }
+  }
+  function toggleComplete(button) {
+    const labId = button.dataset.lab;
+    if (!labId) return;
+    const state = loadState();
+    state[labId] = !state[labId];
+    saveState(state);
+    applyState();
+  }
+
+  function applyState() {
+    const state = loadState();
+    $$('.lab-complete').forEach(btn => {
+      const labId = btn.dataset.lab;
+      const completed = !!state[labId];
+      btn.setAttribute('aria-pressed', String(completed));
+      btn.textContent = completed ? 'Completed ✓' : 'Mark complete';
+      // Add subtle visual marker to lab element
+      const labEl = document.getElementById(labId);
+      if (labEl) {
+        if (completed) labEl.classList.add('lab-done');
+        else labEl.classList.remove('lab-done');
+      }
+    });
+  }
+
+
+  function gradeQuiz() {
+    const resultEl = document.getElementById('quiz-result');
+    if (!resultEl) return;
+    const answers = { q1: 'b', q2: 'c', q3: 'a' };
+    let score = 0;
+    let total = 0;
+
+    Object.keys(answers).forEach(q => {
+      total += 1;
+      const sel = document.querySelector(`input[name="${q}"]:checked`);
+      if (sel && sel.value === answers[q]) score += 1;
+    });
+
+    resultEl.setAttribute('aria-live', 'polite');
+    const pct = Math.round((score / total) * 100);
+    let message = `You scored ${score}/${total} (${pct}%).`;
+    if (pct === 100) message += ' Great job — you nailed it!';
+    else if (pct >= 66) message += ' Good work — review the labs to hit 100%.';
+    else message += ' Keep practicing — try the labs again.';
+    resultEl.textContent = message;
+
+    const state = loadState();
+    state.__quiz = { score, total, ts: Date.now() };
+    saveState(state);
+  }
+
+  function resetQuiz() {
+    document.getElementById('quiz-form').reset();
+    const r = document.getElementById('quiz-result');
+    if (r) r.textContent = '';
+    const state = loadState();
+    delete state.__quiz;
+    saveState(state);
+  }
+
+  function restoreUI() {
+    applyState();
+
+    const state = loadState();
+    if (state.__quiz && state.__quiz.score != null) {
+      const resultEl = document.getElementById('quiz-result');
+      if (resultEl) {
+        resultEl.textContent = `Previous score: ${state.__quiz.score}/${state.__quiz.total}.`;
       }
     }
+  }
 
-    // Mark complete toggles
-    if (t.matches('.lab-complete')) {
-      var labKey = t.getAttribute('data-lab'); // e.g., lab-manifest
-      toggleLabComplete(labKey, t);
+  document.addEventListener('click', function (ev) {
+    const t = ev.target;
+    const toggleBtn = t.closest('.lab-toggle');
+    if (toggleBtn) {
+      toggleLab(toggleBtn);
+      return;
     }
+
+    const completeBtn = t.closest('.lab-complete');
+    if (completeBtn) {
+      toggleComplete(completeBtn);
+      return;
+    }
+
+    if (t.id === 'submit-quiz') {
+      gradeQuiz();
+      return;
+    }
+    if (t.id === 'reset-quiz') {
+      resetQuiz();
+      return;
+    }
+
   });
 
-  // Toggle mark complete: store boolean in localStorage and update UI
-  function toggleLabComplete(key, btn) {
-    if (!key) return;
-    var storageKey = 'activity:' + key;
-    var completed = localStorage.getItem(storageKey) === 'true';
-    completed = !completed;
-    localStorage.setItem(storageKey, completed ? 'true' : 'false');
-    updateLabButton(key, btn);
-  }
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
 
-  // Update buttons on init and after change
-  function updateLabButton(key, btnIfProvided) {
-    var storageKey = 'activity:' + key;
-    var completed = localStorage.getItem(storageKey) === 'true';
-    var btn = btnIfProvided;
-    if (!btn) {
-      // find the button
-      var selector = '.lab-complete[data-lab="' + key + '"]';
-      btn = document.querySelector(selector);
-    }
-    if (!btn) return;
-    if (completed) {
-      btn.textContent = 'Completed ✓';
-      btn.disabled = false;
-      btn.style.background = '#e6f7ea';
-      btn.style.color = '#0b6b2b';
-    } else {
-      btn.textContent = 'Mark complete';
-      btn.style.background = '';
-      btn.style.color = '';
-    }
-  }
+      if (!navigator.clipboard) return;
+      const target = btn.dataset.target;
+      if (!target) return;
+      const el = document.getElementById(target);
+      if (!el) return;
+      const text = el.innerText || el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied ✓';
+        setTimeout(() => btn.textContent = orig, 1200);
+      }).catch(() => {
+        btn.textContent = 'Copy failed';
+        setTimeout(() => btn.textContent = 'Copy', 1200);
+      });
+    });
+  });
 
-  // Initialize lab states on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function () {
-    var labButtons = document.querySelectorAll('.lab-complete');
-    labButtons.forEach(function (b) {
-      var key = b.getAttribute('data-lab');
-      updateLabButton(key, b);
-    });
+    restoreUI();
 
-    // Set any lab bodies to hidden initially (unless button is "Open")
-    var toggles = document.querySelectorAll('.lab-toggle');
-    toggles.forEach(function (t) {
-      var id = t.getAttribute('data-target');
-      var body = document.getElementById(id);
-      if (body) body.hidden = true;
-      t.setAttribute('aria-expanded', 'false');
-      t.textContent = 'Open';
+    $$('.lab-toggle').forEach(b => {
+      const tid = b.dataset.target;
+      const body = document.getElementById(tid);
+      const expanded = body && !body.hidden;
+      b.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      b.textContent = expanded ? 'Close' : 'Open';
     });
   });
 
-  // QUIZ LOGIC
-  var quizAnswers = {
-    q1: 'b', // manifest.json
-    q2: 'c', // stale-while-revalidate
-    q3: 'a'  // mvn spring-boot:run
-  };
-
-  document.getElementById('submit-quiz').addEventListener('click', function () {
-    var resultEl = document.getElementById('quiz-result');
-    resultEl.innerHTML = '';
-    var score = 0;
-    var total = Object.keys(quizAnswers).length;
-    Object.keys(quizAnswers).forEach(function (q) {
-      var els = document.getElementsByName(q);
-      var selected = null;
-      for (var i = 0; i < els.length; i++) {
-        if (els[i].checked) { selected = els[i].value; break; }
-      }
-      if (selected === quizAnswers[q]) score++;
-    });
-
-    var pct = Math.round((score / total) * 100);
-    var summary = document.createElement('div');
-    summary.innerHTML = '<strong>Score:</strong> ' + score + '/' + total + ' (' + pct + '%)';
-    resultEl.appendChild(summary);
-
-    // friendly feedback
-    var feedback = document.createElement('div');
-    feedback.style.marginTop = '8px';
-    if (score === total) {
-      feedback.textContent = 'Excellent — you got all answers correct.';
-    } else if (score >= total - 1) {
-      feedback.textContent = 'Good job — one small mistake. Revisit the labs if unsure.';
-    } else {
-      feedback.textContent = 'Keep practicing — review the labs and try again.';
-    }
-    resultEl.appendChild(feedback);
-
-    // Save quiz result to localStorage
-    localStorage.setItem('activity:quiz-score', score.toString());
-  });
-
-  // Reset quiz
-  document.getElementById('reset-quiz').addEventListener('click', function () {
-    var form = document.getElementById('quiz-form');
-    form.reset();
-    var resultEl = document.getElementById('quiz-result');
-    resultEl.innerHTML = '';
-    localStorage.removeItem('activity:quiz-score');
-  });
-
+  window.PWAActivities = { loadState, saveState, resetQuiz };
 })();
